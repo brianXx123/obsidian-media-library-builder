@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "id": "demo-001",
+      "type": "movie",
+      "title": "Orbital Passage",
+      "year": 2024,
+      "genres": [
+        "Science Fiction",
+        "Adventure"
+      ],
+      "rating": 8.2,
+      "watched": true,
+      "overview": "Fictional example only."
+    },
+    {
+      "id": "demo-002",
+      "type": "tv",
+      "title": "The Quiet District",
+      "year": 2023,
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "rating": 7.4,
+      "watched": false,
+      "overview": "Fictional example only."
+    }
+  ]
+}
