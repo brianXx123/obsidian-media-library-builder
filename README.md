@@ -2,92 +2,89 @@
 
 # Obsidian Media Library Builder
 
-**An offline-first, AI-assisted toolkit for creating personal movie and TV libraries in Obsidian.**
+**Create a local-first movie & TV library in Obsidian using an AI Skill, a CLI and a native poster-wall plugin.**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-![Stage](https://img.shields.io/badge/stage-technical%20preview-orange) ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![CI](https://img.shields.io/badge/tests-unittest-informational) ![License](https://img.shields.io/badge/license-MIT-green)
+![Stage](https://img.shields.io/badge/stage-0.2.0--preview-orange) ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 </div>
 
 > [!IMPORTANT]
-> **Technical preview — not the original Movie Wall release.** This repository is a tested starter implementation with a reusable AI Skill, CSV/JSON importer, Markdown notes, catalog, and standalone offline wall preview. It **does not yet include** the author's existing Obsidian Movie Wall plugin or genuine product screenshots. Those assets must be reviewed, licensed, and integrated before a feature-parity release.
+> **Independent compatibility implementation, not a port of the author's original Movie Wall.**
+> The original Movie Wall sources and genuine Obsidian screenshots have not been provided. This repository includes an independently implemented in-Obsidian media wall and a standalone offline HTML gallery. The native plugin has automated contract tests; actual Obsidian desktop/mobile UI testing is still pending. **No AI mockups are shown as actual screenshots.**
 
-## Real product preview / 真实预览
+## Features / 功能
 
-The CLI produces `Media Library/Wall Preview.html`, a standalone browser page with search and filters. **No original Obsidian Movie Wall screenshot is included yet.** Earlier AI-generated concept mockups are intentionally excluded because they show features not implemented here.
+| Component | What it actually does |
+| --- | --- |
+| AI Skill (`SKILL.md`) | Guides supported agents through import, safety checks and local plugin installation |
+| CLI (Python, standard library only) | Imports UTF-8 CSV/JSON, normalizes records, creates notes and a catalog |
+| Obsidian plugin (`plugin/`) | In-app poster grid, title search, movie/TV + genre + watched filters, rating/year sorting |
+| Native detail dialog | Title, original title, year, genres, rating, description and link to the original note |
+| Watch tracking | Saves changes in `Media Library/user-state.json` without rewriting imported notes or the catalog |
+| Offline browser preview | Searchable HTML poster wall, including vault-local posters where available |
+| Documentation | English + Simplified Chinese setup, data safety, roadmap and contribution notes |
 
-## What it does
+**What it does NOT yet include:** the original Movie Wall implementation/UI parity; automatic TMDB matching or artwork downloads; season and collection editing; GUI drag-and-drop importer; verified desktop/mobile Obsidian screenshots. Those limitations are tracked in the [roadmap](docs/ROADMAP.md).
 
-- Creates a non-destructive `Media Library/` structure inside a chosen Obsidian vault.
-- Imports your own movie and TV data from UTF-8 CSV or JSON (no sample collection included beyond fictional examples).
-- Generates individual Markdown notes with YAML frontmatter, a catalog, and a navigable Markdown index.
-- Produces a standalone, offline HTML poster-grid preview with search and filters, without installing an Obsidian plugin.
-- Uses deterministic IDs, dry-run, validation, conflict detection and atomic file replacement; refuses to silently replace edited notes.
-- Works with Python's standard library; no scraping, cloud account, API key, or third-party Python package required.
+## Quick start / 快速开始
 
-### Current limitations
-
-This **does not recreate the original in-app Movie Wall interface**. There is no TMDB scraper, automatic poster downloading, Obsidian community-plugin installer, two-way synchronization, or verified mobile interaction in the preview. Poster paths refer to your own local assets. The generated HTML wall runs in a browser, not as the original Obsidian plugin. See [roadmap](docs/ROADMAP.md).
-
-## Quick start
-
-Requirements: Python 3.10+ and Obsidian (to use the generated Markdown vault). Run from the project root:
+Requires Python 3.10+ and [Obsidian](https://obsidian.md). Run from this repository root.
 
 ```bash
-# Preview changes before writing
-python scripts/media_library.py import --vault "./My Obsidian Vault" --input examples/sample.csv --dry-run
+# 1. Test against a new vault with fictional demo data
+python scripts/media_library.py import --vault "./My Vault" --input examples/sample.csv --dry-run
+python scripts/media_library.py import --vault "./My Vault" --input examples/sample.csv
+python scripts/media_library.py validate --vault "./My Vault"
 
-# Create the library using two fictional sample entries
-python scripts/media_library.py import --vault "./My Obsidian Vault" --input examples/sample.csv
-
-# Validate generated entries
-python scripts/media_library.py validate --vault "./My Obsidian Vault"
+# 2. Copy the three native plugin files safely into this vault
+python scripts/media_library.py install-plugin --vault "./My Vault" --dry-run
+python scripts/media_library.py install-plugin --vault "./My Vault"
 ```
 
-Open `My Obsidian Vault` as a vault in Obsidian and navigate to `Media Library/Library Index.md`. Open `Media Library/Wall Preview.html` in your browser to inspect the separate preview.
+In Obsidian, open `My Vault`, go to **Settings → Community plugins**, and manually enable **Media Library Wall**. Open it via the film ribbon icon or command palette: **Open Media Library / 打开影音库**. No plugin is silently activated.
 
-For an empty library, run:
+The plugin is manually installable from `plugin/manifest.json`, `plugin/main.js` and `plugin/styles.css` as well. Place all three files in `<vault>/.obsidian/plugins/media-library-wall/`. See [plugin guide](plugin/README.md).
+
+For a vault containing no titles yet:
 
 ```bash
-python scripts/media_library.py init --vault "./My Obsidian Vault"
+python scripts/media_library.py init --vault "./My Vault"
 ```
 
-> **Data safety:** Use a fresh test vault first and make backups before importing into an existing vault. The tool stops on colliding note paths and unknown catalog versions. It never deliberately deletes notes. See [architecture and safety](docs/ARCHITECTURE.md).
+For an existing vault, **make a backup first**. The builder refuses to overwrite unmanaged conflicting notes or an unknown catalog; the plugin installer refuses to overwrite differing preexisting plugin files.
 
 ## Import format
 
-Supported fields: `id`, `type`, `title`, `original_title`, `year`, `genres`, `rating`, `watched`, `overview`, `poster`, `tmdb_id`.
+Required: `title`. Optional: `id`, `type` (`movie` / `tv` / 中文别名), `original_title`, `year`, `genres`, `rating` (0–10), `watched`, `overview`, `poster`, `tmdb_id`. UTF-8 CSV and JSON are supported. Use a stable explicit `id` for production libraries so title changes do not create separate records.
 
-- `title` is required; `type` is `movie` or `tv` (Chinese labels also accepted).
-- `genres` accepts comma/semicolon-separated text in CSV or a string array in JSON.
-- `rating` is 0–10; `watched` supports true/false, yes/no and 已看/未看.
-- `poster` is optional and must be a local relative path. Images are **not included or downloaded**.
-- `id` is optional and is generated deterministically when missing. For production data, supplying stable IDs is recommended.
+- Poster assets are **not included**. The `poster` column refers only to an existing vault-local path, such as `Media Library/posters/example.jpg`.
+- User-specific collections, actual videos, personal watch histories and private API keys should **never** be uploaded to a public fork.
+- No TMDB/IMDb scraping or data services are called.
 
-See [`examples/sample.csv`](examples/sample.csv) and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Sample inputs: [CSV](examples/sample.csv) · [JSON](examples/showcase.json). Architecture: [EN](docs/ARCHITECTURE.md) · [中文](docs/ARCHITECTURE.zh-CN.md).
 
 ## AI Skill
 
-[`SKILL.md`](SKILL.md) teaches compatible AI coding agents how to inspect a user's input, run preflight checks, and build a vault safely. It does not require an agent: the CLI works independently. Copy or install the whole repository under a skill directory as supported by your AI agent, or provide the skill file and scripts in its workspace. Exact installation paths vary by agent.
+The [SKILL.md](SKILL.md) file explains safe import and validation to a compatible AI coding agent. Supply this repository as a skill directory in an environment where the agent can execute the CLI and access the intended vault. The Skill is **not itself** a remote NAS connection or always-on service.
 
-## Roadmap
-
-Our first goal is a trustworthy, reproducible publishing pipeline; the original Movie Wall experience is the next integration stage. See [ROADMAP.md](docs/ROADMAP.md) for features separated into **implemented**, **planned**, and **blocked awaiting source assets**.
-
-## Development
+## Verification
 
 ```bash
 python -m unittest discover -s tests -v
-python -m compileall -q scripts
+node --check plugin/main.js
+node --test tests/plugin.test.cjs
 ```
 
-CI runs the test suite on Linux and Windows. Contributions and issue reports are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Please do not upload private libraries, API keys, copyrighted poster collections, or media files to issues or pull requests.
+The repository contains GitHub Actions for Windows and Linux. **Automated contract tests are not a substitute for a manual Obsidian desktop + mobile test.** See the [test plan](docs/TESTING.md).
 
-## Acknowledgments & trademark notice
+## Project status & transparency
 
-This is an independent community project, not affiliated with the Obsidian team or TMDB. Obsidian and other names belong to their respective owners. Third-party metadata and artwork must be used under their own terms and licenses.
+This is **v0.2.0-preview** (source on `main`), not an official release or an Obsidian Community Plugins listing. It is an independent community utility, unaffiliated with Obsidian or TMDB. No real film posters are bundled and no imagined GUI screenshots are presented as a finished product.
+
+[Roadmap](docs/ROADMAP.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Change log](CHANGELOG.md) · [Plugin installation](plugin/README.md)
 
 ## License
 
-MIT for the original **preview code and documentation in this repository**. Any future imported Movie Wall plugin source or third-party artwork requires separate rights review before inclusion.
+MIT covers the original code and text committed here. Any eventual inclusion of the author's original Movie Wall source or third-party media assets will require a separate permission/license review.
