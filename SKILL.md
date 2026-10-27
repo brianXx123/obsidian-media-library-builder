@@ -1,47 +1,41 @@
 ---
 name: obsidian-media-library-builder
-description: Safely build or expand an offline Obsidian movie/TV media library from user-supplied CSV or JSON, with Markdown notes, catalog, and a standalone HTML wall preview. 支持从用户自己的 CSV 或 JSON 文件安全创建 Obsidian 影视库。
+description: Build a local-first Obsidian movie/TV library from a user's own CSV/JSON; safely install the native offline media wall plugin. 依据用户自己的片单生成 Obsidian 影音库，并安全安装原生海报墙。
 ---
 
 # Obsidian Media Library Builder / Obsidian 影音库构建
 
-## Activation / 使用场景
+Use when an end user wants a self-hosted/private Obsidian movie and TV library. This Skill contains instructions and calls repository-local Python commands; it is **not** an online service.
 
-Use when the user asks to create a personal movie/TV library inside Obsidian or import their own CSV/JSON collection. Do **not** claim this technical preview installs or reproduces the original Movie Wall plugin.
+## Mandatory safety / 安全要求
+1. Discover the actual vault path and user's own input CSV/JSON. Prefer a new vault; back up an existing one. Never use the author's private catalog or assume NAS access.
+2. Inspect the input and validate title/type/year/IDs. Uncertain media matching must remain unresolved; no fabricated TMDB IDs, scores or posters.
+3. Run `--dry-run` before writes. Do not delete anything or overwrite manually edited notes to bypass conflict checks.
+4. Copy the native plugin only after the user wants it, and don't enable community plugins on their behalf. Refuse to overwrite unrelated or modified plugin files.
+5. Verify actual notes, catalog, installer files, and checks. Do not claim Obsidian UI PASS merely because Python/Node tests passed.
+6. Only vault-local images are supported. Never fetch movie posters, media files, or private watch data without separate permission.
+7. The plugin is independently implemented and does **not** claim feature parity with the unavailable original Movie Wall.
 
-当用户希望从自己的片单创建 Obsidian 影音库时使用。请**不要**将此技术预览版声称为已复现原版 Movie Wall 插件。
-
-## Ground rules / 操作规则
-
-1. Ask for or locate the intended vault root and input CSV/JSON. Never assume access to the user's private library, NAS, or accounts.
-2. Prefer a **new vault** unless the user explicitly chooses an existing one; advise a backup for existing vaults.
-3. Do not import media files, private watch history, API credentials, or copyrighted poster packages into any publicly shared repository.
-4. Run `import --dry-run` first; inspect errors. Never edit or delete files by hand to make a conflict disappear.
-5. Execute `import` only after input and target are confirmed, then run `validate` and report actual results.
-6. If metadata matching is ambiguous, keep it unresolved; never invent TMDB IDs, posters, release years, or scores.
-7. Only present the HTML poster-grid as an **offline browser preview**. The original Obsidian Movie Wall plugin integration is not implemented yet.
-8. Never silently overwrite hand-edited Obsidian notes; request explicit instructions before migrations or destructive operations.
-
-## Commands / 操作命令
-
-Run from this repository's root:
+## Procedure / 执行流程
 
 ```bash
-python scripts/media_library.py import --vault "/path/to/Vault" --input "/path/to/my-media.csv" --dry-run
-python scripts/media_library.py import --vault "/path/to/Vault" --input "/path/to/my-media.csv"
-python scripts/media_library.py validate --vault "/path/to/Vault"
+python scripts/media_library.py import --vault "/path/to/vault" --input "/path/to/media.csv" --dry-run
+python scripts/media_library.py import --vault "/path/to/vault" --input "/path/to/media.csv"
+python scripts/media_library.py validate --vault "/path/to/vault"
+python scripts/media_library.py install-plugin --vault "/path/to/vault" --dry-run
+python scripts/media_library.py install-plugin --vault "/path/to/vault"
 ```
 
-For an empty library, run `python scripts/media_library.py init --vault "/path/to/Vault"`.
+Ask the user to manually enable **Media Library Wall** in Obsidian Settings → Community plugins. The view can then be opened from the film ribbon or command palette.
 
-## Expected outputs / 交付内容
-
+## Outputs / 输出
 - `Media Library/Movies/*.md` — movie notes / 电影笔记
-- `Media Library/TV Series/*.md` — TV notes / 剧集笔记
+- `Media Library/TV Series/*.md` — TV notes / 电视剧笔记
 - `Media Library/catalog.json` — normalized catalog / 标准化目录
-- `Media Library/Library Index.md` — Obsidian navigation / Obsidian 分类索引
-- `Media Library/Wall Preview.html` — standalone preview / 浏览器独立预览
+- `Media Library/Library Index.md` — Obsidian links / 索引
+- `Media Library/Wall Preview.html` — separate offline browser preview / 独立浏览器预览
+- `.obsidian/plugins/media-library-wall/` — native plugin files / 原生插件文件
+- `Media Library/user-state.json` — watch-status overrides written only after interaction / 用户观看状态
 
-## Verification / 验收
-
-Run `python -m unittest discover -s tests -v` for script regression tests. Report completed commands, imported item counts, explicit conflicts and gaps. Do not call untested integrations PASS.
+## Validation / 验收
+Run `python -m unittest discover -s tests -v` and `node --test tests/plugin.test.cjs` in the source repository when available. Report the exact checks executed and which UI environments still need manual tests. 
