@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse, csv, hashlib, html, json, os, re, sys, tempfile
 from pathlib import Path
 
-VERSION="0.1.0-preview"
+VERSION="0.2.0-preview"
 MARKER="<!-- generated-by: obsidian-media-library-builder; managed-file: true -->"
 class LibraryError(Exception): pass
 
@@ -140,15 +140,53 @@ def validate_vault(vault):
         return missing
     except (OSError,ValueError,KeyError,TypeError) as e: return [str(e)]
 
+
+def install_plugin(vault, dry_run=False):
+    """Safely copy the independent native wall plugin into an Obsidian vault.
+
+    The user must explicitly enable it in Obsidian; this command does not alter
+    community-plugins.json or any user preference.
+    """
+    vault=Path(vault).resolve()
+    if not vault.is_dir():
+        raise LibraryError("Vault directory does not exist / 未找到库目录")
+    plugin_src=Path(__file__).resolve().parent.parent/"plugin"
+    dest=vault/".obsidian"/"plugins"/"media-library-wall"
+    required=("manifest.json","main.js","styles.css")
+    for directory in (vault/".obsidian",vault/".obsidian"/"plugins",dest):
+        if directory.is_symlink():
+            raise LibraryError("Refusing symlink in plugin destination / 拒绝符号链接")
+    for name in required:
+        source=plugin_src/name
+        target=dest/name
+        if not source.is_file():
+            raise LibraryError("Missing plugin source: "+str(source))
+        if target.is_symlink():
+            raise LibraryError("Refusing symlink destination: "+str(target))
+        if target.exists() and target.read_bytes()!=source.read_bytes():
+            raise LibraryError("Existing plugin file differs; refusing overwrite: "+str(target))
+    if not dry_run:
+        dest.mkdir(parents=True,exist_ok=True)
+        for name in required:
+            target=dest/name
+            if not target.exists():
+                atomic(target,(plugin_src/name).read_text(encoding="utf-8"))
+    return dest
+
 def main():
     p=argparse.ArgumentParser(description="Obsidian Media Library Builder")
     sub=p.add_subparsers(dest="cmd",required=True)
-    for name in ("init","import","validate"):
+    for name in ("init","import","validate","install-plugin"):
         q=sub.add_parser(name); q.add_argument("--vault",required=True)
         if name=="import": q.add_argument("--input",required=True)
         if name!="validate": q.add_argument("--dry-run",action="store_true")
     a=p.parse_args()
     try:
+        if a.cmd=="install-plugin":
+            folder=install_plugin(a.vault,a.dry_run)
+            print(('DRY RUN' if a.dry_run else 'INSTALLED')+': '+str(folder))
+            print('Enable Media Library Wall manually in Obsidian Community plugins / 请在 Obsidian 中手动启用')
+            return 0
         if a.cmd=="validate":
             errors=validate_vault(a.vault)
             if errors: raise LibraryError("; ".join(errors))
