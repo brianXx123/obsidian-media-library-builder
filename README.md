@@ -13,11 +13,9 @@
 > [!IMPORTANT]
 > **Technical preview — not the original Movie Wall release.** This repository is a tested starter implementation with a reusable AI Skill, CSV/JSON importer, Markdown notes, catalog, and standalone offline wall preview. It **does not yet include** the author's existing Obsidian Movie Wall plugin or genuine product screenshots. Those assets must be reviewed, licensed, and integrated before a feature-parity release.
 
-## Interface preview (generated sample, **not** the original Movie Wall)
+## Real product preview / 真实预览
 
-_Screenshot pending verified binary upload._
-
-*The screenshot will be included only after image upload is verified. It is not a screenshot of the author's original Obsidian plugin.*
+The CLI produces `Media Library/Wall Preview.html`, a standalone browser page with search and filters. **No original Obsidian Movie Wall screenshot is included yet.** Earlier AI-generated concept mockups are intentionally excluded because they show features not implemented here.
 
 ## What it does
 
