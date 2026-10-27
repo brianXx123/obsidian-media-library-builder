@@ -79,14 +79,14 @@ def wall(items):
 <title>Media Library / 影音库</title><style>body{background:#111318;color:#eee;font:15px system-ui;margin:auto;max-width:1100px;padding:24px}
 input,select{background:#252935;color:#fff;padding:12px;border:1px solid #555;border-radius:8px;margin:6px}
 #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px;margin-top:24px}
-.card{background:#1e222c;padding:12px;border-radius:12px;overflow-wrap:anywhere}.poster{aspect-ratio:2/3;background:#302b43;display:grid;place-items:center;color:#aaa}
+.card{background:#1e222c;padding:12px;border-radius:12px;overflow-wrap:anywhere}.poster{aspect-ratio:2/3;background:#302b43;display:grid;place-items:center;color:#aaa;overflow:hidden}.poster img{width:100%;height:100%;object-fit:cover}
 img{max-width:100%;max-height:100%;object-fit:cover}small{color:#aeb0c1}</style>
 <h1>Media Library / 影音库</h1><p>Offline HTML preview — not the original Obsidian Movie Wall plugin.</p>
 <input id="q" placeholder="Search / 搜索"><select id="kind"><option value="">All</option><option value="movie">Movies</option><option value="tv">TV</option></select>
 <select id="status"><option value="">All statuses</option><option value="yes">Watched</option><option value="no">Not watched</option></select><div id="grid"></div>
 <script>const items=DATA;const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function render(){const q=document.querySelector('#q').value.toLowerCase(),k=document.querySelector('#kind').value,s=document.querySelector('#status').value;
-document.querySelector('#grid').innerHTML=items.filter(x=>(!q||x.title.toLowerCase().includes(q))&&(!k||x.type===k)&&(!s||(s==='yes')===x.watched)).map(x=>'<div class="card"><div class="poster">Poster / 海报</div><h3>'+esc(x.title)+'</h3><small>'+esc(x.year??'')+' · '+esc(x.type)+' · '+(x.watched?'Watched':'Watchlist')+(x.rating==null?'':' · ★'+esc(x.rating))+'</small></div>').join('')}
+document.querySelector('#grid').innerHTML=items.filter(x=>(!q||x.title.toLowerCase().includes(q))&&(!k||x.type===k)&&(!s||(s==='yes')===x.watched)).map(x=>'<div class="card"><div class="poster">'+(x.poster?'<img loading="lazy" alt="Poster" src="'+esc(x.poster.startsWith('Media Library/')?x.poster.slice(14):'../'+x.poster)+'">':'Poster / 海报')+'</div><h3>'+esc(x.title)+'</h3><small>'+esc(x.year??'')+' · '+esc(x.type)+' · '+(x.watched?'Watched':'Watchlist')+(x.rating==null?'':' · ★'+esc(x.rating))+'</small></div>').join('')}
 for(const id of ['q','kind','status'])document.getElementById(id).addEventListener('input',render);render();</script></html>""".replace("DATA",data)
 
 def run_build(vault,records,dry_run=False):
