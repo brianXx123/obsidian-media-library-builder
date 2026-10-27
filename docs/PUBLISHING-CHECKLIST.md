@@ -1,10 +1,14 @@
-# Release verification / 发布验收
-- [x] GitHub repository created and public / 仓库已创建并公开
-- [x] Bilingual README and Skill / 中英文说明
-- [x] Script + tests committed / 脚本和测试已提交
-- [ ] GitHub CI passing after first push / 等待 CI 验证
-- [ ] Original Movie Wall source and integration / 原版插件待集成
-- [ ] Real Obsidian plugin screenshots / 原版真实截图待补
-- [ ] Cross-platform manual verification / 跨平台手工验证待完成
+# Release verification / 发布验收清单
 
-Technical preview is not a full original plugin release.
+- [x] Public repository and correct owner / 公开仓库和账号确认
+- [x] Bilingual README & Skill / 双语首页和 Skill
+- [x] CLI source, examples, unit tests and CI workflow committed / 脚本、示例和 CI 已提交
+- [x] Native Obsidian plugin source, manifest, styles and install command / 原生插件源代码和安装器已提交
+- [x] All marketing concept images excluded from README / 未使用 AI 想象界面
+- [ ] Full GitHub Actions CI success confirmed / 尚未确认所有远端 CI PASS
+- [ ] Actual Obsidian desktop manual test and screenshots / 尚未 Obsidian 桌面实测
+- [ ] Actual Obsidian Mobile manual test and screenshots / 尚未 Obsidian 手机实测
+- [ ] Original Movie Wall source obtained and compared / 尚缺原版源码
+- [ ] Formal tagged GitHub Release published / 尚未发布正式 Release
+
+Status: **0.2.0-preview on main**, not a finished feature-parity release.
