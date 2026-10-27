@@ -1,0 +1,9 @@
+{
+  "id": "media-library-wall",
+  "name": "Media Library Wall",
+  "version": "0.2.0",
+  "minAppVersion": "1.4.0",
+  "description": "Local-first movie and TV poster wall for a generated Obsidian media catalog. / 本地优先影音海报墙",
+  "author": "Media Library Builder contributors",
+  "isDesktopOnly": false
+}
