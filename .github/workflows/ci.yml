@@ -16,6 +16,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Node syntax check
+        run: node --check plugin/main.js
+      - name: Obsidian plugin contract tests
+        run: node --test tests/plugin.test.cjs
       - name: Syntax check
         run: python -m compileall -q scripts
       - name: Unit tests
