@@ -1,0 +1,3 @@
+id,type,title,original_title,year,genres,rating,watched,overview,poster,tmdb_id
+sample-001,movie,星海旅人,Starlight Voyager,2024,"科幻,冒险",8.5,true,A fictional exploration story,,
+sample-002,tv,午夜档案,Midnight Archives,2023,"悬疑,剧情",7.9,false,A fictional mystery series,,
