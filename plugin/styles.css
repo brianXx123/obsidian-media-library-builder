@@ -1,0 +1,25 @@
+.mlb-root{padding:18px 20px;height:100%;overflow:auto;--mlb-panel:var(--background-secondary);--mlb-muted:var(--text-muted)}
+.mlb-root h2{margin:0 0 18px;font-size:1.5rem}
+.mlb-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.mlb-toolbar input{min-width:180px;flex:1 1 190px}
+.mlb-toolbar select{flex:0 1 auto;min-width:115px;max-width:220px}
+.mlb-toolbar select,.mlb-toolbar input{margin:0;max-height:40px}
+.mlb-counter{color:var(--mlb-muted);font-size:.88em;margin:14px 0}
+.mlb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:14px;align-items:start}
+.mlb-card{display:flex;flex-direction:column;align-items:stretch;text-align:left;min-width:0;height:auto;padding:0 0 12px;border:1px solid var(--background-modifier-border);border-radius:10px;background:var(--mlb-panel);overflow:hidden;cursor:pointer;color:var(--text-normal);box-shadow:none}
+.mlb-card:hover,.mlb-card:focus-visible{border-color:var(--interactive-accent);outline-offset:2px;filter:none}
+.mlb-poster,.mlb-detail-art{aspect-ratio:2/3;background:var(--background-primary-alt);width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mlb-poster img,.mlb-detail-art img{width:100%;height:100%;object-fit:cover}
+.mlb-placeholder{font-size:1.1rem;letter-spacing:.12em;font-weight:700;color:var(--text-faint);text-align:center}
+.mlb-title{padding:9px 10px 2px;font-weight:650;line-height:1.3;overflow-wrap:anywhere}
+.mlb-meta{padding:0 10px;font-size:.78em;color:var(--mlb-muted);line-height:1.45}
+.mlb-status{margin:6px 10px 0;font-size:.76em;color:var(--text-muted)}
+.mlb-status.watched{color:var(--color-green)}
+.mlb-detail{max-width:700px}
+.mlb-detail h2{line-height:1.3;margin-bottom:4px}
+.mlb-detail-art{width:min(220px,45%);margin:12px 0;border-radius:8px}
+.mlb-detail-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.mlb-subtitle{color:var(--text-muted)}
+.mlb-overview{white-space:pre-wrap}
+.mlb-error{color:var(--text-error)}
+@media(max-width:650px){.mlb-root{padding:12px 8px}.mlb-grid{grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:9px}.mlb-toolbar>*{flex:1 1 125px;max-width:100%!important}.mlb-title{padding:7px 8px 2px}.mlb-meta{padding:0 8px}.mlb-status{margin:5px 8px 0}}
