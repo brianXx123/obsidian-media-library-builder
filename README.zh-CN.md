@@ -2,88 +2,87 @@
 
 # Obsidian Media Library Builder
 
-**离线优先、AI 辅助的 Obsidian 个人影音库构建工具。**
+**用 AI Skill、Python 生成器和 Obsidian 原生海报墙插件，快速构建属于自己的影音库。**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-![Stage](https://img.shields.io/badge/stage-technical%20preview-orange) ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Stage](https://img.shields.io/badge/stage-0.2.0--preview-orange) ![License](https://img.shields.io/badge/license-MIT-green)
 
 </div>
 
 > [!IMPORTANT]
-> **当前为技术预览版，而不是原始 Movie Wall 的正式移植版。** 本仓库已经提供可测试的 AI Skill、CSV/JSON 导入、Markdown 作品笔记、目录数据及独立的离线海报墙预览。但目前**尚未包含作者原有的 Obsidian Movie Wall 插件源码及真实软件截图**。这些内容必须在确认源码、授权和实际兼容性后整合，才能发布功能对等的正式版本。
+> **当前是独立实现的兼容预览版，不是用户原版 Movie Wall 插件源码的移植。**
+> 原插件源码和 Obsidian 实际截图尚未取得。本仓库已经提供可安装的 Obsidian 原生海报墙插件、命令行导入工具、AI Skill 和独立 HTML 浏览器预览。**插件已配置自动化契约测试，但还没有完成真实 Obsidian 桌面和手机端的人工验收。** 不使用 AI 概念图冒充成品。
 
-## 真实效果展示
+## 已实现的功能
 
-本版本可实际生成 `Media Library/Wall Preview.html`，这是支持搜索和筛选的独立浏览器页面。**尚未包含原版 Obsidian Movie Wall 的真实截图。** 之前制作的 AI 概念图展示了未实现的功能，因此不作为产品截图发布。
+| 模块 | 功能 |
+| --- | --- |
+| AI Skill `SKILL.md` | 引导 AI 检查片单、试运行、导入并安全安装插件 |
+| Python 命令行工具 | 导入 CSV/JSON；生成 Markdown 笔记、索引和 `catalog.json` |
+| Obsidian 原生插件 | 海报网格、中文/英文片名搜索、电影/剧集/类型/观看状态筛选、排序 |
+| 原生详情弹窗 | 作品名称、年份、评分、类型、简介、直接打开原 Markdown 笔记 |
+| 观看状态 | 独立保存到 `Media Library/user-state.json`，不覆盖原始片单和笔记 |
+| HTML 离线预览 | 浏览器中查看独立海报墙，可加载用户库内的本地海报文件 |
+| 项目文档 | 中英双语 README、安装教程、架构、安全与开发路线图 |
 
-## 它能做什么
+**尚未实现**：原版 Movie Wall 视觉和交互完全一致、TMDB 自动检索/海报下载、季/合集交互管理、拖拽 GUI、真实桌面和移动端 Obsidian 完整验收。请查看[路线图](docs/ROADMAP.md)。
 
-- 在指定的 Obsidian 库中建立 `Media Library/` 目录，不主动删除已有笔记。
-- 导入用户自己的电影、电视剧 CSV/JSON 清单；示例文件仅包含虚构作品。
-- 自动生成带 YAML 属性的 Markdown 笔记、统一作品目录和可点击的分类索引。
-- 创建带搜索、类型和观看状态筛选的独立离线 HTML 海报墙预览，无需安装插件。
-- 提供稳定 ID、试运行、数据验证、冲突检测和原子写入；不会悄悄覆盖被手工修改的作品笔记。
-- 仅依赖 Python 标准库，不需要 API 密钥，也不会擅自抓取网络影视资料。
+## 快速安装
 
-### 当前限制
-
-这一预览版**还不能直接复现作者原有的 Obsidian 内置 Movie Wall 界面**。目前不支持 TMDB 在线刮削、自动下载海报、自动安装社区插件、双向同步或已通过测试的移动端交互。海报使用用户提供的本地相对路径。HTML 海报墙仅供浏览器打开，不能冒充原版 Obsidian 插件。
-
-## 三步上手
-
-安装 Python 3.10 或更新版本；使用 Obsidian 打开生成的库。在项目根目录运行：
+需要 Python 3.10+ 和 [Obsidian](https://obsidian.md)。在项目根目录执行：
 
 ```bash
-# 只检查将要生成的内容，不写入文件
+# 1. 用虚构的示例作品生成新的影音库
 python scripts/media_library.py import --vault "./我的Obsidian库" --input examples/sample.csv --dry-run
-
-# 用两条虚构示例记录生成影音库
 python scripts/media_library.py import --vault "./我的Obsidian库" --input examples/sample.csv
-
-# 验证目录与作品笔记
 python scripts/media_library.py validate --vault "./我的Obsidian库"
+
+# 2. 将 Obsidian 插件安装至该库（不修改用户启用设置）
+python scripts/media_library.py install-plugin --vault "./我的Obsidian库" --dry-run
+python scripts/media_library.py install-plugin --vault "./我的Obsidian库"
 ```
 
-在 Obsidian 中打开 `Media Library/Library Index.md` 查看作品索引；在浏览器中打开 `Media Library/Wall Preview.html` 查看独立海报墙预览。
+打开 Obsidian，选择上述库，在**设置 → 第三方插件（Community plugins）**中手动启用 **Media Library Wall**。然后点击左侧电影图标或命令面板的 **Open Media Library / 打开影音库**。
 
-如果想从一个空库开始：
+你也可以手动把 `plugin/` 目录中的 `main.js`、`manifest.json`、`styles.css` 放到 `<库目录>/.obsidian/plugins/media-library-wall/`。完整步骤见 [插件说明](plugin/README.md)。
+
+空库初始化：
 
 ```bash
 python scripts/media_library.py init --vault "./我的Obsidian库"
 ```
 
-> **数据安全：** 建议先用全新测试库执行，并在导入已有库前备份。程序在检测到同名冲突笔记或未知版本目录时会拒绝继续；它不会主动删除用户笔记。详细规则见 [架构和数据安全](docs/ARCHITECTURE.zh-CN.md)。
+**注意：** 对已有笔记库操作前务必备份。生成器拒绝覆盖不属于自己的冲突笔记，插件安装器拒绝覆盖内容不同的既有插件文件，不会偷偷启用第三方插件。
 
-## 导入字段
+## 支持哪些数据？
 
-支持：`id`、`type`、`title`、`original_title`、`year`、`genres`、`rating`、`watched`、`overview`、`poster`、`tmdb_id`。
+`title` 必填；其余为 `id`、`type`、`original_title`、`year`、`genres`、`rating`、`watched`、`overview`、`poster` 和 `tmdb_id`。支持 UTF-8 CSV 或 JSON，电影/剧集可使用中文类型别名。
 
-- `title` 必填；`type` 可为 `movie`/`tv` 或相应中文名称。
-- `genres` 支持 CSV 中逗号、分号分隔，或 JSON 字符串数组。
-- `rating` 范围是 0–10；`watched` 支持 true/false、yes/no、已看/未看。
-- `poster` 可选，只接受相对本地路径；不附带、不下载图片。
-- `id` 可选，未提供时生成确定性 ID；正式数据建议提供稳定的唯一 ID。
+- 建议使用固定 `id`，避免以后修改片名导致生成新记录。
+- `poster` 是**库内部的相对文件路径**，例如 `Media Library/posters/example.jpg`；不自带海报，也不进行自动抓取。
+- 本仓库不包含作者的私人影视库、任何影片文件或 API 密钥。
 
-见 [`examples/sample.csv`](examples/sample.csv)。
+示例：[CSV](examples/sample.csv) · [JSON](examples/showcase.json)。
 
-## AI Skill
+## 技术、Skill 与验收
 
-[`SKILL.md`](SKILL.md) 告诉兼容的 AI 编程助手如何检查用户数据、试运行以及安全建立 Obsidian 库。即使不使用 AI，也可以直接使用命令行工具。可按所使用 AI 工具的 Skill 安装机制导入整个项目；不同 AI 工具的安装路径并不完全相同。
+AI Skill 见 [SKILL.md](SKILL.md)。它是一套给 AI 使用的构建流程，不是独立网页软件，也不会自动连接你电脑上的 NAS。
 
-## 路线图与开发
-
-优先目标是完善可复现、安全可靠的交付流程，随后再接入原始 Movie Wall 界面。所有功能按**已经实现、计划实现、等待源码**区分，详见 [路线图](docs/ROADMAP.md)。
+本地测试：
 
 ```bash
 python -m unittest discover -s tests -v
-python -m compileall -q scripts
+node --check plugin/main.js
+node --test tests/plugin.test.cjs
 ```
 
-CI 会在 Linux 和 Windows 上运行自动化测试。欢迎提交 Issue 和 PR，详见 [贡献指南](CONTRIBUTING.md)。请勿上传私人影音库、密钥、受版权保护的海报包或视频文件。
+CI 在 Windows 和 Linux 测试。自动化测试与 Obsidian 实际桌面/手机端测试需要分开记录，详见[验收清单](docs/TESTING.md)。
 
-## 声明及许可证
+## 发布状态
 
-这是独立社区工具，与 Obsidian 官方、TMDB 无隶属关系。产品名称和商标归各自权利人所有；外部元数据、海报必须遵守对应服务条款和版权许可。
+当前为 **v0.2.0-preview**，已提交 GitHub 源码，但不是正式 Release，也尚未进入 Obsidian 社区插件商店。所有效果展示必须取自真实运行的程序，不使用 AI 想象界面。
 
-仓库中原创的**预览版代码和文档**使用 MIT 许可证。日后接入的 Movie Wall 原插件源码及第三方图片，须单独完成授权核对后才能公开。
+[路线图](docs/ROADMAP.md) · [安全说明](SECURITY.md) · [贡献指南](CONTRIBUTING.md) · [更新日志](CHANGELOG.md)
+
+本项目与 Obsidian、TMDB 官方无隶属关系。仓库原创源码及文档采用 MIT 许可证，任何第三方海报、原版 Movie Wall 源码仍需独立核实许可后才能发布。
