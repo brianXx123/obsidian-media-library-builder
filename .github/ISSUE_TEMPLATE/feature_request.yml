@@ -1,0 +1,33 @@
+name: "Feature request / 功能建议"
+description: "Suggest improvements to the original open-source media-library project / 为原创开源影音库提出建议"
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "User problem / 使用中遇到的问题"
+      description: "Describe the need rather than just a UI effect. / 请描述使用需求，不只描述希望出现的特效"
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed behavior / 建议的功能与交互"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform / 平台"
+      options:
+        - All / 所有平台
+        - Desktop Obsidian / 桌面端
+        - Obsidian Mobile / 移动端
+        - AI Skill / 技能工作流
+        - Importer / 导入脚本
+        - Documentation / 文档
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives and context / 替代方案和背景"
