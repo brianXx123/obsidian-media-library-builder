@@ -82,7 +82,7 @@ The repository contains GitHub Actions for Windows and Linux. **Automated contra
 
 This is **v0.2.0-preview** (source on `main`), not an official release or an Obsidian Community Plugins listing. It is an original open-source project maintained by brianXx123, unaffiliated with Obsidian or TMDB. No real film posters are bundled and no imagined GUI screenshots are presented as a finished product.
 
-[Roadmap](docs/ROADMAP.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Change log](CHANGELOG.md) · [Plugin installation](plugin/README.md)
+[Roadmap](docs/ROADMAP.md) · [Release guide / 发布指南](docs/RELEASE-GUIDE.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Change log](CHANGELOG.md) · [Plugin installation](plugin/README.md)
 
 ## License
 
