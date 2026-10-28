@@ -82,6 +82,6 @@ CI 在 Windows 和 Linux 测试。自动化测试与 Obsidian 实际桌面/手�
 
 当前为 **v0.2.0-preview**，已提交 GitHub 源码，但不是正式 Release，也尚未进入 Obsidian 社区插件商店。所有效果展示必须取自真实运行的程序，不使用 AI 想象界面。
 
-[路线图](docs/ROADMAP.md) · [安全说明](SECURITY.md) · [贡献指南](CONTRIBUTING.md) · [更新日志](CHANGELOG.md)
+[路线图](docs/ROADMAP.md) · [GitHub 正式发布指南](docs/RELEASE-GUIDE.md) · [安全说明](SECURITY.md) · [贡献指南](CONTRIBUTING.md) · [更新日志](CHANGELOG.md)
 
 本项目由 brianXx123 原创发起，与 Obsidian、TMDB 官方无隶属关系。仓库中的代码及文档采用 MIT 许可证。后续整合作者早期本地 Movie Wall 代码时，需要核对其中的第三方依赖与图片素材授权。
