@@ -26,18 +26,18 @@
 
 These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work demo with plugin 0.3.1. The desktop demo now has real artwork for all 24 works: 22 film posters and 2 official TV publicity photographs, each with file-specific public-domain evidence. Titles without verified artwork were replaced in the desktop demo. No source artwork is shipped. [Capture records](docs/screenshots/metadata.json).
 
-![Real Obsidian Desktop library](docs/screenshots/desktop-library.png)
+[![Real Obsidian Desktop library / 真实桌面影音库](docs/screenshots/previews/desktop-library.webp)](docs/screenshots/desktop-library.png)
 
 <details>
 <summary><strong>Desktop features / 桌面功能截图（点击展开）</strong></summary>
 
 | Movies / 电影 | Series / 电视剧 |
 |---|---|
-| ![Movies](docs/screenshots/desktop-movies.png) | ![Series](docs/screenshots/desktop-series.png) |
+| [![Movies](docs/screenshots/previews/desktop-movies.webp)](docs/screenshots/desktop-movies.png) | [![Series](docs/screenshots/previews/desktop-series.webp)](docs/screenshots/desktop-series.png) |
 | Detail / 详情 | Filter / 筛选 |
-| ![Detail](docs/screenshots/desktop-detail.png) | ![Filter](docs/screenshots/desktop-filter.png) |
+| [![Detail](docs/screenshots/previews/desktop-detail.webp)](docs/screenshots/desktop-detail.png) | [![Filter](docs/screenshots/previews/desktop-filter.webp)](docs/screenshots/desktop-filter.png) |
 
-[Markdown note / 笔记](docs/screenshots/desktop-note.png) · [Light theme / 浅色主题](docs/screenshots/desktop-light.png)
+[Markdown note / 笔记](docs/screenshots/desktop-note.png) · [Light theme / 浅色主题](docs/screenshots/desktop-light.png) · [Actual-screenshot slideshow GIF / 桌面截图轮播](docs/screenshots/previews/desktop-screenshot-tour.gif)
 
 </details>
 
@@ -45,7 +45,9 @@ These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work dem
 
 | Android library / 安卓海报墙 | Detail / 详情 | Watched filter / 观看筛选 |
 |---|---|---|
-| ![Android library](docs/screenshots/mobile-library.png) | ![Android detail](docs/screenshots/mobile-detail.png) | ![Android filter](docs/screenshots/mobile-filter.png) |
+| [![Android library](docs/screenshots/previews/mobile-library.webp)](docs/screenshots/mobile-library.png) | [![Android detail](docs/screenshots/previews/mobile-detail.webp)](docs/screenshots/mobile-detail.png) | [![Android filter](docs/screenshots/previews/mobile-filter.webp)](docs/screenshots/mobile-filter.png) |
+
+**Mobile screenshot slideshow / 移动端截图轮播:** [GIF preview (real captured frames, not a screen recording)](docs/screenshots/previews/mobile-screenshot-tour.gif). These WebP images are compressed thumbnails; click the [original screenshot directory](docs/screenshots/) for full-resolution PNG evidence. / WebP 为压缩预览，原始 PNG 及证据保持不变。
 
 Mobile screenshots are retained byte-for-byte from plugin 0.3.0, as requested; they show the earlier separate demo. Android captures: actual Obsidian Mobile 1.14.4 on Android 16/API 36 emulator, 720×1600 original portrait pixels. / Android 16 模拟器中真实 Obsidian Mobile 1.14.4，原始竖屏 720×1600。
 
