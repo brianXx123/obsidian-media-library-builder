@@ -20,7 +20,7 @@
 > **技术预览版，不是 1.0 稳定版：** 已有真实 Windows 和 Android 模拟器运行记录；高级导入、迁移和部分原生平台尚未完成验收。以下截图为实际运行画面，并非 AI 概念图。
 
 
-[Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
+[Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Real screenshot gallery / 真实截图演示](docs/SHOWCASE.md) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
 
 ## 真实软件截图
 
