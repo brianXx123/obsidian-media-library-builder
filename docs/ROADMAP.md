@@ -13,10 +13,10 @@
 - All CI jobs green on both Windows and Linux
 - Reimport + manually edited note stress tests and concurrent plugin state writes
 
-## Blocked on unavailable original assets / 原始素材缺失
-- Feature-perfect recreation of the original Movie Wall
-- Comparisons against the original UI and its interaction design
-- Rights-reviewed original plugin source and genuine screenshots
+## Earlier local build integration / 早期本地版本整合
+- Import and review the author's earlier Movie Wall source / 整理并接入作者此前的 Movie Wall 代码
+- Compare visual layout, interactions, and data schema against the earlier build / 对照旧版界面与数据格式
+- Capture genuine Obsidian screenshots after actual installation / 完成真实安装后截取桌面与手机截图
 
 ## Future enhancements / 后续增强
 - Optional TMDB matching and licensed poster retrieval with explicit consent and API terms
