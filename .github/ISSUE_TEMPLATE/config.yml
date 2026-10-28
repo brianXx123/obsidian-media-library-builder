@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "FAQ / 常见问题"
+    url: "https://github.com/brianXx123/obsidian-media-library-builder/blob/main/docs/FAQ.md"
+    about: "Before reporting a bug, check installation, poster paths, and supported platforms. / 先查看安装、海报路径与平台问题"
+  - name: "Security / 安全问题"
+    url: "https://github.com/brianXx123/obsidian-media-library-builder/blob/main/SECURITY.md"
+    about: "Do not post sensitive exploit details or secrets in public issues. / 切勿在公开 Issue 中泄露漏洞敏感信息或密钥"
