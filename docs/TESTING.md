@@ -8,7 +8,7 @@
 | Linux / Windows runners | GitHub Actions `.github/workflows/ci.yml` | Workflow committed; results require readback |
 | Actual Obsidian desktop plugin UI | Real Obsidian desktop | NOT RUN |
 | Real Obsidian Mobile | Real Obsidian Mobile | NOT RUN |
-| Original Movie Wall parity | Original source + original vault/screenshots | BLOCKED: original not available |
+| Earlier Movie Wall build parity | Author's earlier source + sanitized test vault/screenshots | NOT VERIFIED: earlier source not yet provided |
 | AI-generated promotional UI images | Not admissible as product evidence | EXCLUDED |
 
 ## Manual desktop/mobile checklist / 人工验收
