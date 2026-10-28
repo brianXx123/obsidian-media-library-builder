@@ -20,7 +20,7 @@
 > **Preview, not stable 1.0:** The AI Skill and Movie Wall are functional but advanced import/migration and some native platforms remain unverified. Actual screenshots below are from the documented test environments, not concept art.
 
 
-[Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
+[Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Real screenshot gallery / 真实截图演示](docs/SHOWCASE.md) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
 
 ## Real software
 
