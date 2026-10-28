@@ -1,14 +1,14 @@
-# Release verification / 发布验收清单
+# Publishing evidence / 发布证据
 
-- [x] Public repository and correct owner / 公开仓库和账号确认
-- [x] Bilingual README & Skill / 双语首页和 Skill
-- [x] CLI source, examples, unit tests and CI workflow committed / 脚本、示例和 CI 已提交
-- [x] Native Obsidian plugin source, manifest, styles and install command / 原生插件源代码和安装器已提交
-- [x] All marketing concept images excluded from README / 未使用 AI 想象界面
-- [ ] Full GitHub Actions CI success confirmed / 尚未确认所有远端 CI PASS
-- [ ] Actual Obsidian desktop manual test and screenshots / 尚未 Obsidian 桌面实测
-- [ ] Actual Obsidian Mobile manual test and screenshots / 尚未 Obsidian 手机实测
-- [ ] Earlier local Movie Wall source reviewed and compared / 早期本地 Movie Wall 代码尚未整合比对
-- [ ] Formal tagged GitHub Release published / 尚未发布正式 Release
+- [x] Original source located, copied read-only and compared.
+- [x] Bilingual README and complete executable Skill.
+- [x] Safe CLI/import/upgrade and extracted-package tests.
+- [x] Actual Windows Obsidian desktop screenshots.
+- [x] Actual Android Obsidian emulator screenshots and watch/season reload.
+- [x] Historical real-device recording reviewed separately; original versions unconfirmed.
+- [x] Public poster license evidence recorded; no source posters/private catalog/video in packages.
+- [x] Version 0.3.0 aligned in manifests, assets and notes; numeric tag planned.
 
-Status: **0.2.0-preview on main**, not a finished feature-parity release.
+Remote commit/readback, all CI matrix jobs and the release URL must be confirmed from live GitHub state. The publication workflow creates a draft, uploads all six checked assets, then marks it pre-release only after successful push CI. Community directory approval and stable 1.0 are not claimed. See [validation](VALIDATION-v0.3.0.md) and [release guide](RELEASE-GUIDE.md).
+
+中文：工程、包和真实桌面/模拟器证据均已验收。远端提交、CI 与发布结果需以 GitHub 实际回读为准；自动流程只在 CI 成功后创建预发布。原版真机录像单列，不冒充新版真机测试。

@@ -1,7 +1,9 @@
-# 架构与数据安全
+# Architecture / 架构
 
-输入 CSV/JSON → 字段验证 → 稳定 ID → Markdown 笔记、catalog.json、Obsidian 导航页、独立 HTML 预览。
+`SKILL.md` directs an agent to the standard-library Python CLI. `normalize_record` validates user input; `run_build` preflights all conflicts, journals a batch and atomically writes notes/catalog/index/optional browser preview. The preview is a secondary diagnostic; Obsidian is the primary runtime.
 
-仅向用户指定库的 `Media Library/` 写入。拒绝覆盖未管理的笔记和索引。单文件写入使用原子替换，但整体导入不属于数据库事务，请先备份。推荐提供固定 ID，避免重命名时产生新条目。
+The plugin's original MovieWallView reads note frontmatter through Obsidian metadataCache, caches normalized items, groups collections, filters/sorts and lazily loads local artwork. Movie/season/collection modals share a navigation stack with scroll restoration. Watched data and personal ratings use processFrontMatter and preserve note content. Legacy 0.2 watch overrides are read from user-state.json. Catalog data supports imports and delete transactions; it is not the current watch-history source.
 
-当前仓库已包含本项目的 Obsidian 原生海报墙模块与 HTML 预览，作者此前本地开发的 Movie Wall 旧版代码尚未合并。当前不提供 TMDB 刮削、海报自动下载、视频文件或独立手机应用；Obsidian 移动端适配仍待实际验收。
+Plugin installation changes only three files. Explicit upgrades retain a backup under the vault's .obsidian/plugin-backups. Packaging uses allowlisted code/resources and tests an extracted Skill in a fresh vault. No private catalog or source poster enters release bundles.
+
+中文：Skill 调用标准库 CLI，预检后以恢复日志和原子写入生成资料；Obsidian 插件读取笔记属性，通过原版导航栈呈现合集和季。观看及评分只更新相应属性。插件升级备份旧文件，打包只允许必要资源，并验证解压后的新库安装。

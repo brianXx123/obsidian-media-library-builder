@@ -1,0 +1,22 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-28",
+  "desktop": "PASS",
+  "desktop_app": "Obsidian 1.14.5 / Windows",
+  "mobile": "PASS",
+  "mobile_app": "Obsidian Mobile 1.14.4 / Android 16 API 36 emulator",
+  "physical_android_current_version": "NOT RUN",
+  "historical_phone_video": "REVIEWED; version unconfirmed; local-only",
+  "python_tests": 20,
+  "node_test_entries": 8,
+  "packages": "PASS",
+  "skill_validator": "PASS",
+  "ci": "REMOTE ACTIONS REQUIRED; release gated on successful push CI",
+  "not_run": [
+    "macOS native",
+    "Linux native",
+    "iOS",
+    "native destructive delete",
+    "personal author-provided CSV"
+  ]
+}

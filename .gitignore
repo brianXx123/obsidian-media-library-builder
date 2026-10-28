@@ -11,3 +11,8 @@ test-vault/
 private/
 user-vault/
 my-vault/
+
+demo-vault/
+perf-vault/
+*.apk
+artwork-local/

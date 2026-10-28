@@ -1,9 +1,10 @@
 {
   "id": "media-library-wall",
   "name": "Media Library Wall",
-  "version": "0.2.0",
-  "minAppVersion": "1.4.0",
-  "description": "Local-first movie and TV poster wall for a generated Obsidian media catalog. / 本地优先影音海报墙",
-  "author": "Media Library Builder contributors",
-  "isDesktopOnly": false
+  "version": "0.3.0",
+  "minAppVersion": "1.5.0",
+  "description": "Original Movie Wall integration: local movie/TV library, seasons, collections, watch tracking. / 原创影音库",
+  "author": "brianXx123",
+  "isDesktopOnly": false,
+  "authorUrl": "https://github.com/brianXx123"
 }

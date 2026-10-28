@@ -1,0 +1,306 @@
+[
+  {
+    "id": "demo-01",
+    "title": "寻子遇仙记",
+    "original_title": "The Kid",
+    "year": 1921,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-01.jpg",
+    "collection_id": "chaplin",
+    "collection_name": "卓别林 / Chaplin",
+    "collection_order": 1
+  },
+  {
+    "id": "demo-02",
+    "title": "淘金记",
+    "original_title": "The Gold Rush",
+    "year": 1925,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-02.jpg",
+    "collection_id": "chaplin",
+    "collection_name": "卓别林 / Chaplin",
+    "collection_order": 2
+  },
+  {
+    "id": "demo-03",
+    "title": "将军号",
+    "original_title": "The General",
+    "year": 1926,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-03.png"
+  },
+  {
+    "id": "demo-04",
+    "title": "福尔摩斯二世",
+    "original_title": "Sherlock Jr.",
+    "year": 1924,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-04.jpg"
+  },
+  {
+    "id": "demo-05",
+    "title": "大都会",
+    "original_title": "Metropolis",
+    "year": 1927,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-05.jpg"
+  },
+  {
+    "id": "demo-06",
+    "title": "诺斯费拉图",
+    "original_title": "Nosferatu",
+    "year": 1922,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": ""
+  },
+  {
+    "id": "demo-07",
+    "title": "卡里加里博士的小屋",
+    "original_title": "The Cabinet of Dr. Caligari",
+    "year": 1920,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": ""
+  },
+  {
+    "id": "demo-08",
+    "title": "歌剧魅影",
+    "original_title": "The Phantom of the Opera",
+    "year": 1925,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-08.jpg"
+  },
+  {
+    "id": "demo-09",
+    "title": "安全至下",
+    "original_title": "Safety Last!",
+    "year": 1923,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-09.jpg"
+  },
+  {
+    "id": "demo-10",
+    "title": "战舰波将金号",
+    "original_title": "Battleship Potemkin",
+    "year": 1925,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-10.jpg"
+  },
+  {
+    "id": "demo-11",
+    "title": "月球旅行记",
+    "original_title": "A Trip to the Moon",
+    "year": 1902,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-11.jpg"
+  },
+  {
+    "id": "demo-12",
+    "title": "吸血鬼",
+    "original_title": "Vampyr",
+    "year": 1932,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": ""
+  },
+  {
+    "id": "demo-13",
+    "title": "日出",
+    "original_title": "Sunrise",
+    "year": 1927,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-13.jpg"
+  },
+  {
+    "id": "demo-14",
+    "title": "大马戏团",
+    "original_title": "The Circus",
+    "year": 1928,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-14.jpg",
+    "collection_id": "chaplin",
+    "collection_name": "卓别林 / Chaplin",
+    "collection_order": 14
+  },
+  {
+    "id": "demo-15",
+    "title": "流浪汉",
+    "original_title": "The Tramp",
+    "year": 1915,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-15.jpg"
+  },
+  {
+    "id": "demo-16",
+    "title": "基督山伯爵",
+    "original_title": "The Count of Monte Cristo",
+    "year": 1922,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": ""
+  },
+  {
+    "id": "demo-17",
+    "title": "黑海盗",
+    "original_title": "The Black Pirate",
+    "year": 1926,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-17.jpg"
+  },
+  {
+    "id": "demo-18",
+    "title": "巴格达大盗",
+    "original_title": "The Thief of Bagdad",
+    "year": 1924,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-18.jpg"
+  },
+  {
+    "id": "demo-19",
+    "title": "巴黎一妇人",
+    "original_title": "A Woman of Paris",
+    "year": 1923,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-19.jpg",
+    "collection_id": "chaplin",
+    "collection_name": "卓别林 / Chaplin",
+    "collection_order": 19
+  },
+  {
+    "id": "demo-20",
+    "title": "笑面人",
+    "original_title": "The Man Who Laughs",
+    "year": 1928,
+    "type": "movie",
+    "genres": [
+      "Classic / 经典"
+    ],
+    "poster": "Media Library/posters/demo-20.jpg"
+  },
+  {
+    "id": "demo-21",
+    "title": "星际穿越",
+    "original_title": "Interstellar",
+    "year": 2014,
+    "type": "movie",
+    "genres": [
+      "Science fiction / 科幻"
+    ],
+    "poster": ""
+  },
+  {
+    "id": "demo-22",
+    "title": "盗梦空间",
+    "original_title": "Inception",
+    "year": 2010,
+    "type": "movie",
+    "genres": [
+      "Science fiction / 科幻"
+    ],
+    "poster": ""
+  },
+  {
+    "id": "demo-23",
+    "title": "绝命毒师",
+    "original_title": "Breaking Bad",
+    "year": 2008,
+    "type": "tv",
+    "genres": [
+      "Drama / 剧情"
+    ],
+    "poster": "",
+    "seasons": [
+      {
+        "season": 1,
+        "label": "Season 1",
+        "status": "released"
+      },
+      {
+        "season": 2,
+        "label": "Season 2",
+        "status": "released"
+      },
+      {
+        "season": 3,
+        "label": "Season 3",
+        "status": "released"
+      },
+      {
+        "season": 4,
+        "label": "Season 4",
+        "status": "released"
+      },
+      {
+        "season": 5,
+        "label": "Season 5",
+        "status": "released"
+      }
+    ],
+    "season_count": 5
+  },
+  {
+    "id": "demo-24",
+    "title": "神探夏洛克",
+    "original_title": "Sherlock",
+    "year": 2010,
+    "type": "tv",
+    "genres": [
+      "Drama / 剧情"
+    ],
+    "poster": ""
+  }
+]

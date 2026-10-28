@@ -1,0 +1,75 @@
+name: Verified preview release
+on:
+  push:
+    tags: ['0.*']
+  workflow_run:
+    workflows: ['Tests / 自动化测试']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  preview:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m unittest discover -s tests -v
+      - run: node --check plugin/main.js
+      - run: node --test tests/*.cjs
+      - run: python scripts/build_release.py
+      - run: git diff --exit-code -- release
+      - name: Check recorded acceptance and package hashes
+        run: |
+          python -c "import json; d=json.load(open('docs/validation.json')); assert d['desktop']=='PASS' and d['mobile']=='PASS' and d['packages']=='PASS'"
+          cd release && sha256sum --check SHA256SUMS.txt
+      - name: Create draft, attach verified assets and publish as pre-release
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const version = JSON.parse(fs.readFileSync('plugin/manifest.json')).version;
+            if (context.eventName !== 'workflow_run' && context.ref !== `refs/tags/${version}`) {
+              throw new Error('Publish only from the exact numeric manifest tag.');
+            }
+            const {owner, repo} = context.repo;
+            try {
+              await github.rest.repos.getReleaseByTag({owner,repo,tag:version});
+              core.info('This version already has a release; no changes made.');
+              return;
+            } catch (error) { if(error.status !== 404) throw error; }
+            if (context.eventName === 'workflow_run') {
+              const sha = context.payload.workflow_run.head_sha;
+              const head = await github.rest.git.getRef({owner,repo,ref:'heads/main'});
+              if(head.data.object.sha !== sha) throw new Error('main changed after tested commit; wait for its CI.');
+              try { await github.rest.git.createRef({owner,repo,ref:`refs/tags/${version}`,sha}); }
+              catch(error) {
+                if(error.status !== 422) throw error;
+                const tag=await github.rest.git.getRef({owner,repo,ref:`tags/${version}`});
+                if(tag.data.object.sha !== sha) throw new Error('Existing tag points to another commit.');
+              }
+            }
+            const release = await github.rest.repos.createRelease({owner, repo,
+              tag_name: version, name: `${version} Preview / 预发布`,
+              body: fs.readFileSync(`docs/RELEASE-NOTES-v${version}.md`, 'utf8'),
+              draft: true, prerelease: true});
+            const names = [`obsidian-media-library-builder-v${version}.skill`,
+              `media-library-wall-v${version}.zip`, 'SHA256SUMS.txt',
+              'main.js', 'manifest.json', 'styles.css'];
+            for (const name of names) {
+              const data = fs.readFileSync(`release/${name}`);
+              await github.rest.repos.uploadReleaseAsset({owner, repo,
+                release_id: release.data.id, name, data,
+                headers: {'content-type':'application/octet-stream','content-length':data.length}});
+            }
+            await github.rest.repos.updateRelease({owner, repo,
+              release_id: release.data.id, draft:false, prerelease:true, make_latest:'false'});

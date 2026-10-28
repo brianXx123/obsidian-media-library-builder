@@ -1,11 +1,7 @@
-# GitHub Repository Metadata / 仓库描述建议
+# Repository metadata / 仓库描述
 
-**Title:** Obsidian Media Library Builder
+Obsidian Media Library Builder — original project by brianXx123. AI Skill, CSV/JSON builder, protected Markdown notes and original native Movie Wall integration with seasons and collections. Version 0.3.0 preview. Real Windows desktop and Android emulator evidence is in the validation report; physical-device historical video was reviewed separately.
 
-**English:** Original open-source Obsidian media library builder by brianXx123 — AI Skill, CSV/JSON importer, Markdown catalog and native movie/TV poster wall.
+中文：brianXx123 原创 Obsidian 影音库构建 Skill，整合原版海报墙、季管理与合集；0.3.0 预发布，已完成桌面及 Android 模拟器实际验收。
 
-**中文：** brianXx123 原创开源 Obsidian 影音库构建工具，集成 AI Skill、影视数据导入、Markdown 资料管理及原生海报墙。
-
-**Suggested GitHub topics:** `obsidian`, `obsidian-plugin`, `agent-skills`, `media-library`, `movie-library`, `python`, `open-source`, `bilingual`
-
-**Current version:** `v0.2.0-preview`. Actual Obsidian desktop/mobile testing and integration of the author's earlier local Movie Wall source remain pending.
+Topics: obsidian, obsidian-plugin, agent-skills, media-library, movie-library, python, bilingual.

@@ -1,24 +1,9 @@
-# Verification matrix / 验收矩阵
+# Testing / 测试
 
-| Test | Evidence method | Status |
-| --- | --- | --- |
-| Python CSV/JSON import & note generation | `python -m unittest discover -s tests -v` | Repository tests provided; CI to confirm |
-| Python plugin installer safety | `tests/test_install.py` | Repository tests provided; CI to confirm |
-| JavaScript plugin initialization, catalog validation, filters and watch-state persistence | `node --test tests/plugin.test.cjs` | Mocked Obsidian API contract tests; CI to confirm |
-| Linux / Windows runners | GitHub Actions `.github/workflows/ci.yml` | Workflow committed; results require readback |
-| Actual Obsidian desktop plugin UI | Real Obsidian desktop | NOT RUN |
-| Real Obsidian Mobile | Real Obsidian Mobile | NOT RUN |
-| Earlier Movie Wall build parity | Author's earlier source + sanitized test vault/screenshots | NOT VERIFIED: earlier source not yet provided |
-| AI-generated promotional UI images | Not admissible as product evidence | EXCLUDED |
+The executed 0.3.0 results, exact versions, actual app evidence and NOT RUN items are in [VALIDATION-v0.3.0.md](VALIDATION-v0.3.0.md). Capture metadata includes every screenshot's environment, scenario and hash. Node contract tests are distinct from native tests.
 
-## Manual desktop/mobile checklist / 人工验收
-1. Create and open an isolated test vault; install the three plugin files.
-2. Manually enable the plugin and open the view.
-3. Confirm catalog count, search, type/genre/status, rating/year sort, details and open-note action.
-4. Supply vault-local image files and verify thumbnails; confirm missing poster fallback.
-5. Toggle Watched, restart Obsidian and verify `user-state.json` persistence.
-6. Reimport identical CSV, verify state and original notes remain unchanged.
-7. Repeat on Obsidian Mobile, checking touch, narrow width, keyboard/screen reader focus.
-8. Capture genuine screen evidence only after each real run. Do not use AI mockups as evidence.
+Run `python -m unittest discover -s tests -v`, `node --check plugin/main.js`, `node --test tests/*.cjs`, then `python scripts/build_release.py`. GitHub CI runs Python 3.10/3.13 on Windows and Linux with Node 22. Read back the exact remote commit's run before claiming CI PASS.
 
-The actual Obsidian app is not available in this development environment. Passing simulated Node contract tests is **not** proof of native rendering on Windows, Android or iOS.
+For native regression checks, generate an isolated demo using create_demo.py, enable only this plugin, verify search/category/genre/sort/detail/note actions, toggle watched and one TV season, reload the plugin and verify notes. Test missing images, both themes, keyboard and touch scrolling. Never use a private vault for published demonstration captures. Native deletion/rollback needs a separate disposable test with a backup.
+
+中文：实际执行结果以版本验收报告为准；自动化测试与真实应用测试分别记录。升级前关闭 Obsidian，已有库先备份。公开截图使用隔离 Demo，未测试项目必须标 NOT RUN。

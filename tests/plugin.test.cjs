@@ -1,101 +1,32 @@
-// Native Obsidian plugin compatibility tests. No app installation required.
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const vm = require('node:vm');
-const path = require('node:path');
-
-class FakeNode {
-  constructor(tag='div') {this.tag=tag;this.children=[];this.attrs={};this.events={};this.value='';}
-  createEl(tag){const n=new FakeNode(tag);this.children.push(n);return n;}
-  addClass(cls){this.cls=((this.cls||'')+' '+cls).trim();}
-  setText(t){this.text=String(t);}
-  empty(){this.children=[];}
-  setAttribute(k,v){this.attrs[k]=v;}
-  addEventListener(type,fn){this.events[type]=fn;}
-  querySelector(tag){return this.children.find(n=>n.tag===tag)||null;}
-  remove(){this.removed=true;}
-  walk(){return [this,...this.children.flatMap(c=>c.walk())];}
-}
-class ItemView {
-  constructor(leaf){this.leaf=leaf;this.app=leaf.app;this.contentEl=new FakeNode();}
-  registerEvent(){}
-}
-class Plugin {
-  constructor(app){this.app=app;}
-  registerView(type,fn){this.factory=fn;}
-  addRibbonIcon(){}
-  addCommand(){}
-}
-class Modal {
-  constructor(app){this.app=app;this.contentEl=new FakeNode();}
-  open(){this.onOpen();}
-  close(){this.onClose();}
-}
-const notices=[];
-const source=fs.readFileSync(path.join(__dirname,'../plugin/main.js'),'utf8');
-const moduleBox={exports:{}};
-vm.runInNewContext(source,{
-  module:moduleBox, require:(name)=>{
-    assert.equal(name,'obsidian');
-    return {Plugin,ItemView,Modal,Notice:class{constructor(v){notices.push(v);}}};
-  }
-},{filename:'plugin/main.js',timeout:3000});
-const Loaded=moduleBox.exports;
-
-function fixture(catalog) {
-  const store=new Map([['Media Library/catalog.json',JSON.stringify(catalog)]]);
-  const adapter={
-    exists:async p=>store.has(p),
-    read:async p=>store.get(p),
-    write:async(p,v)=>{store.set(p,v);}
-  };
-  const vault={
-    adapter,
-    on:()=>({}),
-    getAbstractFileByPath:()=>null,
-    getMarkdownFiles:()=>[]
-  };
-  const app={vault,workspace:{getLeaf:()=>({app,setViewState:async()=>{},openFile:async()=>{}}),revealLeaf:()=>{},detachLeavesOfType:()=>{}}};
-  return {store,app};
-}
-const data={schema_version:1,items:[
-  {id:'fictional01',title:'星际旅行',original_title:'Orbital Journey',type:'movie',year:2024,rating:8.2,genres:['科幻'],watched:false,poster:''},
-  {id:'fictional02',title:'Mystery Town',type:'tv',year:2023,rating:7.8,genres:['悬疑'],watched:true,poster:'../secret.png'}
-]};
-
-test('Plugin loads and registers native view',async()=>{
-  const {app}=fixture(data);const p=new Loaded(app);await p.onload();
-  const v=p.factory({app});assert.equal(v.getViewType(),'media-library-wall');
-  await v.onOpen();
-  assert.equal(v.records.length,2);
-  assert.equal(v.grid.children.length,2);
-  assert.ok(v.contentEl.walk().some(x=>x.tag==='select'));
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const Module=require('node:module');
+class TFile { constructor(path){this.path=path;this.extension=path.split('.').pop();this.basename=path.split('/').pop();} }
+const original=Module._load;
+Module._load=function(name,...args){return name==='obsidian'?{Plugin:class{},ItemView:class{},Modal:class{},Notice:class{},TFile,setIcon(){}}:original.call(this,name,...args);};
+const Plugin=require('../plugin/main.js');Module._load=original;
+const {MovieWallView}=Plugin.__test;
+test('Legacy and current notes load with original seasons and overrides',()=>{
+ const files=[new TFile('Media Library/Movies/a.md'),new TFile('Media Library/TV Series/b.md')];
+ const fm=[{id:'a',type:'movie',title:'星际穿越',watched:false,overview:'Example'}, {id:'b',type:'tv',title:'Test TV',seasons:[{season:1}],watched_seasons:['S1']}];
+ const v=Object.create(MovieWallView.prototype);v.plugin={legacyStatuses:{a:true}};
+ v.app={vault:{getMarkdownFiles:()=>files},metadataCache:{getFileCache:f=>({frontmatter:fm[files.indexOf(f)]})}};
+ const rows=v.loadItems();assert.equal(rows.length,2);assert.ok(rows.find(x=>x.title==='星际穿越').watched);assert.equal(rows.find(x=>x.title==='Test TV').mediaType,'电视剧');
 });
-test('Save watch status as independent user state',async()=>{
-  const {app,store}=fixture(data);const p=new Loaded(app);await p.onload();
-  const v=p.factory({app});await v.onOpen();
-  await p.setWatched('fictional01',true);
-  assert.equal(JSON.parse(store.get('Media Library/user-state.json')).statuses.fictional01,true);
-  assert.equal(JSON.parse(store.get('Media Library/catalog.json')).items[0].watched,false);
-  await v.refresh();
-  assert.equal(p.isWatched(v.records[0]),true);
+test('Combined genre, title, media and watched filters; year sorting',()=>{
+ const v=Object.create(MovieWallView.prototype);Object.assign(v,{genre:'SF',sort:'year',mediaFilter:'movie',watchFilter:'all',query:''});
+ const base={mediaType:'电影',collectionId:'',genres:['SF'],aliases:[],originalTitle:'',englishTitle:'',watched:false};
+ const rows=[{...base,title:'A',year:2000},{...base,title:'B',year:2020},{...base,title:'C',genres:['Drama'],year:2024}];
+ assert.deepEqual(v.visibleWalls(rows).movies.map(x=>x.title),['B','A']);
+ v.query='a';assert.equal(v.visibleWalls(rows).movies.length,1);v.watchFilter='watched';assert.equal(v.visibleWalls(rows).movies.length,0);
 });
-test('Filter works without overwriting files',async()=>{
-  const {app}=fixture(data);const p=new Loaded(app);await p.onload();
-  const v=p.factory({app});await v.onOpen();v.query='mystery';v.drawCards();assert.equal(v.grid.children.length,1);
-  v.type='movie';v.drawCards();assert.equal(v.grid.children.length,1); // empty-state message
-  assert.equal(v.grid.children[0].text,'No matches / 无符合条件的作品');
+test('Reject external, traversal and non-image poster paths',()=>{
+ const v=Object.create(MovieWallView.prototype);v.app={vault:{getAbstractFileByPath:p=>new TFile(p),getResourcePath:f=>'resource:'+f.path}};
+ for(const p of ['../x.jpg','/x.jpg','https://host/x.jpg','a\\x.jpg','a/./x.jpg','x.md'])assert.equal(v.resourcePath(p),'');
+ assert.equal(v.resourcePath('Media Library/posters/x.jpg'),'resource:Media Library/posters/x.jpg');
 });
-test('Reject duplicate catalog IDs and do not execute HTML',async()=>{
-  const bad={schema_version:1,items:[data.items[0],data.items[0]]};
-  const {app}=fixture(bad);const p=new Loaded(app);await p.onload();
-  const v=p.factory({app});await v.onOpen();assert.equal(v.records.length,0);
-  assert.ok(v.error.includes('duplicate'));
-});
-test('No remote image URLs or script HTML injection sinks',()=>{
-  assert.ok(!source.includes('innerHTML'));
-  assert.ok(!source.includes('eval('));
-  assert.ok(!source.includes('fetch('));
-  assert.ok(!source.includes('require(\'child_process\')'));
+test('Public plugin has no network, dynamic execution or HTML injection',()=>{
+ const s=fs.readFileSync(require.resolve('../plugin/main.js'),'utf8');
+ for(const bad of ['innerHTML','eval(', 'fetch(', 'child_process','http.request'])assert.ok(!s.includes(bad));
 });

@@ -1,17 +1,11 @@
-# Changelog / 更新日志
+# Changelog
 
-## 0.2.0-preview — 2026-10-27
+## 0.3.0 — preview — 2026-10-28
 
-- Add the project's native offline Obsidian poster-wall module with search, filters, sorting, and a detail modal.
-- Add watch-status overrides in `Media Library/user-state.json` without writing to imported notes.
-- Add safe `install-plugin` command (dry-run, no auto-enable, refuses conflicting files).
-- Add Node plugin contract tests and CI checks across Windows/Linux.
-- Fix standalone HTML preview to display vault-local poster files when provided.
-- Refresh bilingual documentation and publish explicit manual-testing limitations.
-- No AI-generated promotional mockups are used as product screenshots.
+- Integrated brianXx123's original Movie Wall 1.5.0 JavaScript/CSS, seasons, collections and navigation.
+- Added genre/sort controls, note opening, personal rating and legacy watch-state support.
+- Hardened local poster paths, conflict protection, recovery, deleted-item handling and plugin upgrade backups.
+- Added isolated public demo data, actual Obsidian screenshots and source/validation evidence.
+- Added deterministic Skill/plugin packages, extraction/install verification and synchronized manifests.
 
-本版本新增 Obsidian 原生海报墙兼容实现、插件安全安装、观看状态、Node 自动测试及双语文档，并明确保留真实 Obsidian 端到端验收限制。
-
-## 0.1.0-preview — 2026-10-27
-
-- Initial CLI, media catalog and Markdown generator, offline HTML preview, examples, Skill and bilingual documentation.
+Earlier 0.2 source preview provided the simplified wall and CSV/JSON builder. This version is a preview and does not claim community-directory approval or every private enrichment script.

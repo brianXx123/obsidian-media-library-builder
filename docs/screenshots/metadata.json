@@ -1,0 +1,180 @@
+[
+  {
+    "file": "desktop-library.png",
+    "scenario": "24-work library with 16 verified historical posters; real missing-poster fallback",
+    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:27:11.714Z",
+    "result": "PASS",
+    "sha256": "14c8eef05bdd0696b13b484ed5d5375ffa6f737b25b2463a0ef4d263f0f3e89b",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "desktop-movies.png",
+    "scenario": "22 movies",
+    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:27:14.929Z",
+    "result": "PASS",
+    "sha256": "82243420eb386d8c3dd3e572b88c15d92d81f7786772ca92fc6ea10184ad1daa",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "desktop-series.png",
+    "scenario": "2 TV series",
+    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:27:15.766Z",
+    "result": "PASS",
+    "sha256": "86ce15981cd23cad1077697a9fb2766fd562b29046e276305e780ba6396b25fe",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "desktop-filter.png",
+    "scenario": "Classic genre filter, 20 works",
+    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:27:18.877Z",
+    "result": "PASS",
+    "sha256": "5ec7308069ca6d3bfc1279c24f1690d3f6d7b4736367ab386c37c36b12cf628d",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "desktop-detail.png",
+    "scenario": "Metropolis detail with unknown source labeled honestly",
+    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:27:21.699Z",
+    "result": "PASS",
+    "sha256": "322df13a3eaea53f8fd8340028254858eeed6912ca83dc8bcd4fd679d77aee2d",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "desktop-note.png",
+    "scenario": "Markdown note opened through detail Open note button; demo state reset",
+    "app": "大都会 (1927) [demo-05] - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:29:47.653Z",
+    "result": "PASS",
+    "sha256": "5ae744324cdb529235f77df58f9c607c8354b96f51739c0727892dcda9d87a21",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "desktop-light.png",
+    "scenario": "Actual Obsidian light theme",
+    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
+    "plugin": "0.3.0",
+    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "capturedAt": "2026-10-28T07:30:26.509Z",
+    "result": "PASS",
+    "sha256": "f5c19b339455174a7829b317d27b80ac3c8ee9185aed80dc0d3d0723b709fc2c",
+    "pixel_dimensions": [
+      1920,
+      1080
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "mobile-library.png",
+    "scenario": "Native touch-scrolled library, 24 works",
+    "app": "Obsidian Mobile 1.14.4",
+    "plugin": "0.3.0",
+    "environment": "Android 16 API 36 x86_64 temporary read-only AVD; native ADB screencap",
+    "capturedAt": "2026-10-28T07:38:06.503366+00:00",
+    "result": "PASS",
+    "sha256": "ffe6c2839fba22142b7cd4aaef8e49c27920365b76c682be797be6deea3cc173",
+    "pixel_dimensions": [
+      720,
+      1600
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "mobile-detail.png",
+    "scenario": "Native touch opened Metropolis detail",
+    "app": "Obsidian Mobile 1.14.4",
+    "plugin": "0.3.0",
+    "environment": "Android 16 API 36 x86_64 temporary read-only AVD; native ADB screencap",
+    "capturedAt": "2026-10-28T07:38:27.175211+00:00",
+    "result": "PASS",
+    "sha256": "b2418f0d46c559b6444a74f8e51135732daff590ce9d7bdec264e33e5abb514c",
+    "pixel_dimensions": [
+      720,
+      1600
+    ],
+    "transforms": "none; original captured image bytes"
+  },
+  {
+    "file": "mobile-filter.png",
+    "scenario": "Actual watched filter after watch state survived plugin reload",
+    "app": "Obsidian Mobile 1.14.4",
+    "plugin": "0.3.0",
+    "environment": "Android 16 API 36 x86_64 temporary read-only AVD; native ADB screencap",
+    "capturedAt": "2026-10-28T07:44:42.740815+00:00",
+    "result": "PASS",
+    "sha256": "0b4003092f5c9f3458f40e99cb76abc48ef57296909fbf4dfd08624438fe4478",
+    "pixel_dimensions": [
+      720,
+      1600
+    ],
+    "transforms": "none; original captured image bytes"
+  }
+]

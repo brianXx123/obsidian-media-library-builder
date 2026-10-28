@@ -1,0 +1,5 @@
+23d9ddc650dabe9831404dbe18e1c8de0ce9ce62dceb93b69b1efbb4ba7a787f  obsidian-media-library-builder-v0.3.0.skill
+aa4ea84d13bd802f0545fe65c9b1b2dc49436bfd53dbda5a54d843d37bf6959b  media-library-wall-v0.3.0.zip
+5fdc9898ce8f5a5639f887ff0f65e25b23c6359ddc1eceb5d375863320025c7a  main.js
+26a8753c90dd7b6f082991364bd2b621fb315481a44ce163cb4a50eb643bab4a  manifest.json
+acef233201eb41944a9349fb14ce6ba489bd87e9f7b3953d2d0575ecb53296d3  styles.css
