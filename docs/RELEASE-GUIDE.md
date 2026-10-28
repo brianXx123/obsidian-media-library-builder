@@ -40,7 +40,19 @@ Do not tag the current `main` branch `v1.0.0` without passing actual application
 
 When release immutability is enabled, GitHub may lock assets and tag contents after publication; draft and verify assets **before** publishing.
 
-## 4. Suggested release-note text / 双语发布说明模板
+## 4. Special case: Obsidian Community Plugins / Obsidian 插件商店上架
+
+**GitHub releases and Obsidian Community Plugin releases have different constraints.** For GitHub-only Skill previews, tags such as `v0.2.0-preview.1` are fine. For **Obsidian Community Plugins**, the published release tag must exactly match `plugin/manifest.json`'s `version` field using numeric `x.y.z`, **without a `v` prefix**, e.g. `0.2.0` (if the manifest says `"version": "0.2.0"`). Do not submit the current preview as if it had passed native Obsidian acceptance.
+
+Before submitting the plugin, follow the official documentation at https://docs.obsidian.md/Plugins/Releasing/Submit%20your%20plugin and confirm:
+- Its manifest is at the expected repository location and matches the release tag. The repository currently keeps the plugin files in `plugin/`; adjust packaging/layout as necessary for directory submission.
+- The GitHub release attaches **individual** `main.js`, `manifest.json`, and `styles.css` files, not only a ZIP.
+- The plugin has been actually installed and verified in Obsidian; the community directory is a separate review/submission process.
+- The plugin ID is unique and the published build has the required version and metadata.
+
+**区别：** 只面向 GitHub 分发 Skill 时，可以使用预览标签；若要进入 Obsidian 社区插件商店，则必须按官方要求使用与 `manifest.json` 版本完全一致的纯数字标签，附上三个插件文件，并单独提交审核。
+
+## 5. Suggested release-note text / 双语发布说明模板
 
 ### English
 
@@ -66,7 +78,7 @@ When release immutability is enabled, GitHub may lock assets and tag contents af
 
 **安装方式：** [链接至 README 和插件安装教程]。
 
-## 5. Updating after a release / 后续更新
+## 6. Updating after a release / 后续更新
 
 Commit fixes, increase version consistently (manifest, docs and package names), rerun tests, and create a new tag and Release. Do not silently substitute a newer binary under an older release tag. Prefer a new version for reproducibility.
 
