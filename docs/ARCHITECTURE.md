@@ -4,6 +4,6 @@ CSV/JSON → validation → normalized item IDs → Markdown, catalog JSON, inde
 
 Files are generated only inside the specified vault's `Media Library/` directory. Existing unmanaged notes and indexes are not overwritten. Individual output files are atomically replaced, but a multi-file import is not a database transaction. The user must back up an existing vault before use. For long-term data, supply immutable IDs: automatically derived IDs depend on title, type, and year.
 
-This version does not include the original Movie Wall plugin, online metadata, poster downloading, or video files. The HTML preview uses placeholders and is not the Obsidian in-app Movie Wall.
+The current repository includes a native Obsidian poster-wall module and standalone HTML browser preview. The author's earlier local Movie Wall code has not yet been merged. Online metadata, poster downloading, and video files are not included; the HTML page is separate from the Obsidian plugin.
 
 源码仅处理用户明确选择的 CSV/JSON 和 Vault。不会自行获取电影或电视剧素材，不会删除用户笔记。跨文件写入不是单个事务，建议先备份。
