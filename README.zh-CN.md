@@ -4,6 +4,22 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · **0.3.1 预览版**
 
+[![CI](https://github.com/brianXx123/obsidian-media-library-builder/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/brianXx123/obsidian-media-library-builder/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/brianXx123/obsidian-media-library-builder?include_prereleases&label=preview)](https://github.com/brianXx123/obsidian-media-library-builder/releases)
+[![License: MIT](https://img.shields.io/github/license/brianXx123/obsidian-media-library-builder)](LICENSE)
+
+## 快速开始 / Get started
+
+| **AI Skill（推荐）** | **Obsidian 海报墙插件** |
+|---|---|
+| [**下载 AI Skill 0.3.1**](https://github.com/brianXx123/obsidian-media-library-builder/releases/download/0.3.1/obsidian-media-library-builder-v0.3.1.skill) | [**下载插件 ZIP 0.3.1**](https://github.com/brianXx123/obsidian-media-library-builder/releases/download/0.3.1/media-library-wall-v0.3.1.zip) |
+| 交给 AI 创建影音库、导入片单并安全安装插件。 | 在已有兼容 Obsidian 库中安装原生 Movie Wall。 |
+
+**从这里开始：** [安装教程](#安装-ai-skill) · [常见问题 FAQ](docs/FAQ.md) · [完整 0.3.1 Release](https://github.com/brianXx123/obsidian-media-library-builder/releases/tag/0.3.1)
+
+> **技术预览版，不是 1.0 稳定版：** 已有真实 Windows 和 Android 模拟器运行记录；高级导入、迁移和部分原生平台尚未完成验收。以下截图为实际运行画面，并非 AI 概念图。
+
+
 [Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
 
 ## 真实软件截图
@@ -12,6 +28,9 @@
 
 ![Real Obsidian Desktop library](docs/screenshots/desktop-library.png)
 
+<details>
+<summary><strong>桌面功能细节 / Desktop features（点击展开）</strong></summary>
+
 | Movies / 电影 | Series / 电视剧 |
 |---|---|
 | ![Movies](docs/screenshots/desktop-movies.png) | ![Series](docs/screenshots/desktop-series.png) |
@@ -19,6 +38,8 @@
 | ![Detail](docs/screenshots/desktop-detail.png) | ![Filter](docs/screenshots/desktop-filter.png) |
 
 [Markdown note / 笔记](docs/screenshots/desktop-note.png) · [Light theme / 浅色主题](docs/screenshots/desktop-light.png)
+
+</details>
 
 
 
@@ -76,7 +97,7 @@ node --test tests/*.cjs
 python scripts/build_release.py
 ```
 
-项目以 GitHub 预发布形式分发，尚非 1.0 稳定版或 Obsidian 插件商店上架项目。计划标签 `0.3.1` 与 manifest 一致；社区商店仍需单独审核。[发布指南](docs/RELEASE-GUIDE.md) · [发布说明](docs/RELEASE-NOTES-v0.3.1.md)。
+项目以 GitHub 预发布形式分发，尚非 1.0 稳定版或 Obsidian 插件商店上架项目。计划标签 `0.3.1` 与 manifest 一致；社区商店仍需单独审核。[发布指南](docs/RELEASE-GUIDE.md) · [发布说明](docs/RELEASE-NOTES-v0.3.1.md) · [FAQ 常见问题](docs/FAQ.md)。
 
 ## 许可与贡献
 
