@@ -14,7 +14,7 @@ Use when an end user wants a self-hosted/private Obsidian movie and TV library. 
 4. Copy the native plugin only after the user wants it, and don't enable community plugins on their behalf. Refuse to overwrite unrelated or modified plugin files.
 5. Verify actual notes, catalog, installer files, and checks. Do not claim Obsidian UI PASS merely because Python/Node tests passed.
 6. Only vault-local images are supported. Never fetch movie posters, media files, or private watch data without separate permission.
-7. The plugin is independently implemented and does **not** claim feature parity with the unavailable original Movie Wall.
+7. This is the author's original open-source project. The currently published plugin should not be described as identical to the author's earlier local Movie Wall build until its source and UI have been compared. / 本项目为作者原创；旧版源码和 UI 未核对前，不声称当前版本完全一致。
 
 ## Procedure / 执行流程
 
