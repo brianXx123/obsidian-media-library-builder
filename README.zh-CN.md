@@ -2,7 +2,7 @@
 
 # Obsidian Media Library Builder
 
-**用 AI Skill、Python 生成器和 Obsidian 原生海报墙插件，快速构建属于自己的影音库。**
+**brianXx123 原创开源项目：用 AI Skill、Python 生成器和 Obsidian 原生海报墙插件，快速构建属于自己的影音库。**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -11,8 +11,7 @@
 </div>
 
 > [!IMPORTANT]
-> **当前是独立实现的兼容预览版，不是用户原版 Movie Wall 插件源码的移植。**
-> 原插件源码和 Obsidian 实际截图尚未取得。本仓库已经提供可安装的 Obsidian 原生海报墙插件、命令行导入工具、AI Skill 和独立 HTML 浏览器预览。**插件已配置自动化契约测试，但还没有完成真实 Obsidian 桌面和手机端的人工验收。** 不使用 AI 概念图冒充成品。
+> **原创项目说明：** 影音库的设计构想、产品方向与构建流程由 **brianXx123** 主导。本仓库已经包含当前可用的 Obsidian 原生海报墙、命令行生成器与 AI Skill。此前在作者本地开发的 Movie Wall 旧版源码和真实 Obsidian 截图尚未纳入，因此暂不声称当前界面已与旧版完全一致。**桌面和手机端的 Obsidian 实际操作验收仍待执行。** 不使用 AI 概念图冒充成品。
 
 ## 已实现的功能
 
@@ -26,7 +25,7 @@
 | HTML 离线预览 | 浏览器中查看独立海报墙，可加载用户库内的本地海报文件 |
 | 项目文档 | 中英双语 README、安装教程、架构、安全与开发路线图 |
 
-**尚未实现**：原版 Movie Wall 视觉和交互完全一致、TMDB 自动检索/海报下载、季/合集交互管理、拖拽 GUI、真实桌面和移动端 Obsidian 完整验收。请查看[路线图](docs/ROADMAP.md)。
+**尚未实现或完成验收**：与作者此前 Movie Wall 旧版的视觉及交互完全一致、TMDB 自动检索/海报下载、季/合集交互管理、拖拽 GUI、真实桌面和手机端 Obsidian 完整验收。请查看[路线图](docs/ROADMAP.md)。
 
 ## 快速安装
 
@@ -85,4 +84,4 @@ CI 在 Windows 和 Linux 测试。自动化测试与 Obsidian 实际桌面/手�
 
 [路线图](docs/ROADMAP.md) · [安全说明](SECURITY.md) · [贡献指南](CONTRIBUTING.md) · [更新日志](CHANGELOG.md)
 
-本项目与 Obsidian、TMDB 官方无隶属关系。仓库原创源码及文档采用 MIT 许可证，任何第三方海报、原版 Movie Wall 源码仍需独立核实许可后才能发布。
+本项目由 brianXx123 原创发起，与 Obsidian、TMDB 官方无隶属关系。仓库中的代码及文档采用 MIT 许可证。后续整合作者早期本地 Movie Wall 代码时，需要核对其中的第三方依赖与图片素材授权。
