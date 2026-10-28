@@ -8,7 +8,7 @@
 - [ ] Full GitHub Actions CI success confirmed / 尚未确认所有远端 CI PASS
 - [ ] Actual Obsidian desktop manual test and screenshots / 尚未 Obsidian 桌面实测
 - [ ] Actual Obsidian Mobile manual test and screenshots / 尚未 Obsidian 手机实测
-- [ ] Original Movie Wall source obtained and compared / 尚缺原版源码
+- [ ] Earlier local Movie Wall source reviewed and compared / 早期本地 Movie Wall 代码尚未整合比对
 - [ ] Formal tagged GitHub Release published / 尚未发布正式 Release
 
 Status: **0.2.0-preview on main**, not a finished feature-parity release.
