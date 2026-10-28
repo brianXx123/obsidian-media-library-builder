@@ -2,13 +2,13 @@
 
 **An original open-source project by brianXx123.** Turn your own movie and TV list into an Obsidian library with an AI Skill, protected Markdown notes and the author's native Movie Wall implementation.
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **0.3.0 preview**
+[English](README.md) · [简体中文](README.zh-CN.md) · **0.3.1 preview**
 
-[Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.0.md) · [Artwork / 海报来源](docs/ARTWORK.md)
+[Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
 
 ## Real software
 
-These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work demo with plugin 0.3.0. Sixteen historical posters have file-specific public-domain evidence; the other eight works use the real missing-poster fallback. No artwork sources are shipped. Modern blockbuster posters were omitted where display permission could not be confirmed. [Capture records](docs/screenshots/metadata.json).
+These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work demo with plugin 0.3.1. The desktop demo now has real artwork for all 24 works: 22 film posters and 2 official TV publicity photographs, each with file-specific public-domain evidence. Titles without verified artwork were replaced in the desktop demo. No source artwork is shipped. [Capture records](docs/screenshots/metadata.json).
 
 ![Real Obsidian Desktop library](docs/screenshots/desktop-library.png)
 
@@ -26,7 +26,7 @@ These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work dem
 |---|---|---|
 | ![Android library](docs/screenshots/mobile-library.png) | ![Android detail](docs/screenshots/mobile-detail.png) | ![Android filter](docs/screenshots/mobile-filter.png) |
 
-Android captures: actual Obsidian Mobile 1.14.4 on Android 16/API 36 emulator, 720×1600 original portrait pixels. / Android 16 模拟器中真实 Obsidian Mobile 1.14.4，原始竖屏 720×1600。
+Mobile screenshots are retained byte-for-byte from plugin 0.3.0, as requested; they show the earlier separate demo. Android captures: actual Obsidian Mobile 1.14.4 on Android 16/API 36 emulator, 720×1600 original portrait pixels. / Android 16 模拟器中真实 Obsidian Mobile 1.14.4，原始竖屏 720×1600。
 
 ## What it does
 
@@ -38,7 +38,7 @@ Android captures: actual Obsidian Mobile 1.14.4 on Android 16/API 36 emulator, 7
 
 ## Install the AI Skill
 
-Download `obsidian-media-library-builder-v0.3.0.skill` from Releases. It is a ZIP-format Skill bundle with one `obsidian-media-library-builder/` directory. Extract it into your agent's supported skills directory (for Codex, `$CODEX_HOME/skills` or `~/.codex/skills`). Reload skill discovery. A `.skill` upload button is host-specific; extraction works for directory-based agents. Python 3.10+ must be executable by the agent.
+Download `obsidian-media-library-builder-v0.3.1.skill` from Releases. It is a ZIP-format Skill bundle with one `obsidian-media-library-builder/` directory. Extract it into your agent's supported skills directory (for Codex, `$CODEX_HOME/skills` or `~/.codex/skills`). Reload skill discovery. A `.skill` upload button is host-specific; extraction works for directory-based agents. Python 3.10+ must be executable by the agent.
 
 Example request: “Use obsidian-media-library-builder to build a movie and TV library in my new vault from my CSV. Keep existing notes and use my local posters.” The agent uses [SKILL.md](SKILL.md), inspects your input, runs a dry run, imports and installs the plugin. Supply the actual vault and list paths; this is not a desktop film player or a hosted website.
 
@@ -53,7 +53,7 @@ python scripts/media_library.py validate --vault "./My Vault"
 python scripts/media_library.py install-plugin --vault "./My Vault"
 ```
 
-Open `My Vault` in Obsidian. Enable **Media Library Wall** in **Settings → Community plugins**, then use the clapperboard ribbon or **Open Media Library / 打开影视库**. For manual installation, extract `media-library-wall-v0.3.0.zip` into `<vault>/.obsidian/plugins/media-library-wall/`. Its root contains `main.js`, `manifest.json`, `styles.css`. These files are also separate release attachments. Close Obsidian before upgrades; `install-plugin --upgrade` backs up the prior plugin files locally.
+Open `My Vault` in Obsidian. Enable **Media Library Wall** in **Settings → Community plugins**, then use the clapperboard ribbon or **Open Media Library / 打开影视库**. For manual installation, extract `media-library-wall-v0.3.1.zip` into `<vault>/.obsidian/plugins/media-library-wall/`. Its root contains `main.js`, `manifest.json`, `styles.css`. These files are also separate release attachments. Close Obsidian before upgrades; `install-plugin --upgrade` backs up the prior plugin files locally.
 
 Use your own CSV/JSON instead of `examples/sample.csv`. Only `title` is required. [Full fields](references/schema.md) include stable `id`, `type`, `year`, `genres`, `poster`, `seasons` and collection fields. A poster path is vault-relative, for example `Media Library/posters/film.jpg`. No API key is required.
 
@@ -67,7 +67,7 @@ The UI retains Chinese original Movie Wall labels; primary new controls and all 
 
 ## Verification and support
 
-Python 3.10+; plugin minimum Obsidian 1.5.0. Native desktop tested on Windows with Obsidian 1.14.5. Android 16 emulator with Obsidian Mobile 1.14.4 also passed library, detail, filtering, note opening and watch/season persistence. Exact results are in the [validation report](docs/VALIDATION-v0.3.0.md); macOS, Linux desktop and iOS native UI are **NOT RUN**. GitHub Actions separately tests Windows/Linux CLI and plugin contracts. Automated tests never substitute for actual app acceptance.
+Python 3.10+; plugin minimum Obsidian 1.5.0. Native desktop tested on Windows with Obsidian 1.14.5. The retained 0.3.0 Android 16 emulator evidence with Obsidian Mobile 1.14.4 passed library, detail, filtering, note opening and watch/season persistence. Exact results are in the [validation report](docs/VALIDATION-v0.3.1.md); macOS, Linux desktop and iOS native UI are **NOT RUN**. GitHub Actions separately tests Windows/Linux CLI and plugin contracts. Automated tests never substitute for actual app acceptance.
 
 ```bash
 python -m unittest discover -s tests -v
@@ -76,7 +76,7 @@ node --test tests/*.cjs
 python scripts/build_release.py
 ```
 
-This is a GitHub pre-release, not stable 1.0 or an Obsidian Community Plugins listing. The planned numeric tag `0.3.0` matches the manifest for plugin compatibility. Directory submission remains a separate review process. [Release guide](docs/RELEASE-GUIDE.md) · [Release notes](docs/RELEASE-NOTES-v0.3.0.md).
+This is a GitHub pre-release, not stable 1.0 or an Obsidian Community Plugins listing. The planned numeric tag `0.3.1` matches the manifest for plugin compatibility. Directory submission remains a separate review process. [Release guide](docs/RELEASE-GUIDE.md) · [Release notes](docs/RELEASE-NOTES-v0.3.1.md).
 
 ## License and contribution
 

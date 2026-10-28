@@ -1,136 +1,136 @@
 [
   {
     "file": "desktop-library.png",
-    "scenario": "24-work library with 16 verified historical posters; real missing-poster fallback",
-    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "24/24 real desktop artwork; zero missing placeholders; all local images decoded",
+    "app": "影视库 - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:27:11.714Z",
+    "capturedAt": "2026-10-28T08:22:20.877Z",
     "result": "PASS",
-    "sha256": "14c8eef05bdd0696b13b484ed5d5375ffa6f737b25b2463a0ef4d263f0f3e89b",
+    "transforms": "none; original captured image bytes",
+    "sha256": "216556eb5afa37b1b151278849347d2c4b95e00a38770206af9c1c2763c745fb",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "desktop-movies.png",
-    "scenario": "22 movies",
-    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "22 movies with verified real posters; zero missing images",
+    "app": "影视库 - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:27:14.929Z",
+    "capturedAt": "2026-10-28T08:23:36.916Z",
     "result": "PASS",
-    "sha256": "82243420eb386d8c3dd3e572b88c15d92d81f7786772ca92fc6ea10184ad1daa",
+    "transforms": "none; original captured image bytes",
+    "sha256": "eb22682425d28598da354f125e00d47ca1311bd4ccc01cb4d871ffff44f1baa7",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "desktop-series.png",
-    "scenario": "2 TV series",
-    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "2 television works with official publicity photographs; no missing images",
+    "app": "影视库 - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:27:15.766Z",
+    "capturedAt": "2026-10-28T08:23:37.358Z",
     "result": "PASS",
-    "sha256": "86ce15981cd23cad1077697a9fb2766fd562b29046e276305e780ba6396b25fe",
+    "transforms": "none; original captured image bytes",
+    "sha256": "f28f5e03919279773657aea909ad4be3487949bb335d9e0e37910df764eae285",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "desktop-filter.png",
-    "scenario": "Classic genre filter, 20 works",
-    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "Real title search for Wings, exact verified film poster",
+    "app": "影视库 - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:27:18.877Z",
+    "capturedAt": "2026-10-28T08:23:37.826Z",
     "result": "PASS",
-    "sha256": "5ec7308069ca6d3bfc1279c24f1690d3f6d7b4736367ab386c37c36b12cf628d",
+    "transforms": "none; original captured image bytes",
+    "sha256": "3850572427d8a040f1ee0f41a1c7e8f3b2eab5cb1ca979091831fecac5a45066",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "desktop-detail.png",
-    "scenario": "Metropolis detail with unknown source labeled honestly",
-    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "Actual Metropolis detail and local poster",
+    "app": "影视库 - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:27:21.699Z",
+    "capturedAt": "2026-10-28T08:23:38.642Z",
     "result": "PASS",
-    "sha256": "322df13a3eaea53f8fd8340028254858eeed6912ca83dc8bcd4fd679d77aee2d",
+    "transforms": "none; original captured image bytes",
+    "sha256": "8aadf9b6053f4551f72e63dcced8508a0d01ea16bc872a5f499fd6a4fb5c58e8",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "desktop-note.png",
-    "scenario": "Markdown note opened through detail Open note button; demo state reset",
-    "app": "大都会 (1927) [demo-05] - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "Actual generated Markdown note opened via detail",
+    "app": "大都会 (1927) [demo-05] - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:29:47.653Z",
+    "capturedAt": "2026-10-28T08:23:39.297Z",
     "result": "PASS",
-    "sha256": "5ae744324cdb529235f77df58f9c607c8354b96f51739c0727892dcda9d87a21",
+    "transforms": "none; original captured image bytes",
+    "sha256": "e4647332fc570859596e63c23eb8320e66a868a802c1ae7bb23cff272589bd45",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "desktop-light.png",
-    "scenario": "Actual Obsidian light theme",
-    "app": "影视库 - Demo Vault Verified - Obsidian 1.14.5",
-    "plugin": "0.3.0",
-    "environment": "Windows Obsidian Desktop; isolated profile; real app renderer via CDP",
+    "scenario": "Verified actual light theme with all desktop artwork complete",
+    "app": "大都会 (1927) [demo-05] - Desktop Complete Vault - Obsidian 1.14.5",
+    "plugin": "0.3.1",
+    "environment": "Windows Obsidian Desktop, isolated profile, actual renderer via CDP",
     "viewport": {
       "width": 1920,
       "height": 1080
     },
-    "capturedAt": "2026-10-28T07:30:26.509Z",
+    "capturedAt": "2026-10-28T08:25:20.176Z",
     "result": "PASS",
-    "sha256": "f5c19b339455174a7829b317d27b80ac3c8ee9185aed80dc0d3d0723b709fc2c",
+    "transforms": "none; original captured image bytes",
+    "sha256": "cfe4a3ecdc6ab2eff1b7aa3115f47c33df75165921390f39c3b4a4151811bce9",
     "pixel_dimensions": [
       1920,
       1080
-    ],
-    "transforms": "none; original captured image bytes"
+    ]
   },
   {
     "file": "mobile-library.png",

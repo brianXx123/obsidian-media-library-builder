@@ -5,7 +5,7 @@ description: Build an Obsidian movie and TV library from a user's CSV/JSON, gene
 
 # Obsidian Media Library Builder / 影音库构建
 
-Original project by **brianXx123**. The runtime is Obsidian. Use bundled Python 3.10+ scripts and the native plugin, which integrates the author's Movie Wall 1.5.0 implementation. Public version is 0.3.0 (preview).
+Original project by **brianXx123**. The runtime is Obsidian. Use bundled Python 3.10+ scripts and the native plugin, which integrates the author's Movie Wall 1.5.0 implementation. Public version is 0.3.1 (preview).
 
 Discover the intended vault and the user's CSV/JSON. If missing, start with an isolated demo (`python scripts/create_demo.py --vault "NEW EMPTY FOLDER"`) and ask for information needed for their own collection. Do not infer private-vault access, copy the author's personal database, or fabricate metadata/posters. Execute from this installed Skill directory; resources resolve relative to scripts.
 

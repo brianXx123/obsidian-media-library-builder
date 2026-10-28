@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 — preview — 2026-10-28
+
+- Completed every desktop demo image: 24/24 real posters or official publicity photographs.
+- Recaptured the actual desktop wall, categories, detail, filter, note and verified light theme.
+- Kept all mobile screenshots byte-for-byte unchanged at the user’s request.
+- Retained the 0.3.0 published tag/assets; no plugin runtime behavior changed.
+
+
 ## 0.3.0 — preview — 2026-10-28
 
 - Integrated brianXx123's original Movie Wall 1.5.0 JavaScript/CSS, seasons, collections and navigation.

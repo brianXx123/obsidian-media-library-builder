@@ -1,8 +1,16 @@
 {
-  "version": "0.3.0",
+  "version": "0.3.1",
   "date": "2026-10-28",
-  "desktop": "RECHECKING_THEME_CAPTURE",
+  "desktop": "PASS",
+  "desktop_artwork": "24/24; missing placeholders 0; all wall images decoded",
+  "desktop_app": "Obsidian 1.14.5 / Windows",
   "mobile": "PASS",
+  "mobile_evidence_version": "0.3.0; three existing images retained byte-for-byte as requested",
+  "mobile_runtime": "main.js/styles.css identical to tested 0.3.0",
   "packages": "PASS",
-  "reason": "Final screenshot review found theme switch did not apply; recapture and verify before publishing."
+  "python_tests": 20,
+  "node_test_entries": 8,
+  "skill_validator": "PASS",
+  "ci": "Complete remote Windows/Linux push CI required before publication",
+  "physical_android_current_version": "NOT RUN"
 }

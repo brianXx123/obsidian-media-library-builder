@@ -1,4 +1,4 @@
-# Media Library Wall 0.3.0 / 影音海报墙
+# Media Library Wall 0.3.1 / 影音海报墙
 
 Original project by brianXx123. Integrates the author's Movie Wall 1.5.0 into the public builder layout. Obsidian 1.5.0+; `isDesktopOnly: false`.
 

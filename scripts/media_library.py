@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse, csv, hashlib, html, json, os, re, sys, tempfile, math
 from pathlib import Path
 
-VERSION="0.3.0"
+VERSION="0.3.1"
 MARKER="<!-- generated-by: obsidian-media-library-builder; managed-file: true -->"
 class LibraryError(Exception): pass
 

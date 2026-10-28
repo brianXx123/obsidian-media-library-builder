@@ -1,6 +1,6 @@
 # Testing / 测试
 
-The executed 0.3.0 results, exact versions, actual app evidence and NOT RUN items are in [VALIDATION-v0.3.0.md](VALIDATION-v0.3.0.md). Capture metadata includes every screenshot's environment, scenario and hash. Node contract tests are distinct from native tests.
+The executed 0.3.1 results, exact versions, actual app evidence and NOT RUN items are in [VALIDATION-v0.3.1.md](VALIDATION-v0.3.1.md). Capture metadata includes every screenshot's environment, scenario and hash. Node contract tests are distinct from native tests.
 
 Run `python -m unittest discover -s tests -v`, `node --check plugin/main.js`, `node --test tests/*.cjs`, then `python scripts/build_release.py`. GitHub CI runs Python 3.10/3.13 on Windows and Linux with Node 22. Read back the exact remote commit's run before claiming CI PASS.
 

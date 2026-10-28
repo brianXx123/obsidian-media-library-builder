@@ -61,26 +61,26 @@
     "poster": "Media Library/posters/demo-05.jpg"
   },
   {
-    "id": "demo-06",
-    "title": "诺斯费拉图",
-    "original_title": "Nosferatu",
-    "year": 1922,
+    "title": "钟楼怪人",
+    "original_title": "The Hunchback of Notre Dame",
+    "year": 1923,
     "type": "movie",
+    "id": "demo-06",
     "genres": [
       "Classic / 经典"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-01.jpg"
   },
   {
-    "id": "demo-07",
-    "title": "卡里加里博士的小屋",
-    "original_title": "The Cabinet of Dr. Caligari",
-    "year": 1920,
+    "title": "失落的世界",
+    "original_title": "The Lost World",
+    "year": 1925,
     "type": "movie",
+    "id": "demo-07",
     "genres": [
       "Classic / 经典"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-02.jpg"
   },
   {
     "id": "demo-08",
@@ -127,15 +127,15 @@
     "poster": "Media Library/posters/demo-11.jpg"
   },
   {
-    "id": "demo-12",
-    "title": "吸血鬼",
-    "original_title": "Vampyr",
-    "year": 1932,
+    "title": "西线无战事",
+    "original_title": "All Quiet on the Western Front",
+    "year": 1930,
     "type": "movie",
+    "id": "demo-12",
     "genres": [
       "Classic / 经典"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-05.jpg"
   },
   {
     "id": "demo-13",
@@ -174,15 +174,15 @@
     "poster": "Media Library/posters/demo-15.jpg"
   },
   {
-    "id": "demo-16",
-    "title": "基督山伯爵",
-    "original_title": "The Count of Monte Cristo",
-    "year": 1922,
+    "title": "The Big Parade",
+    "original_title": "The Big Parade",
+    "year": 1925,
     "type": "movie",
+    "id": "demo-16",
     "genres": [
       "Classic / 经典"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-06.jpg"
   },
   {
     "id": "demo-17",
@@ -232,37 +232,38 @@
     "poster": "Media Library/posters/demo-20.jpg"
   },
   {
+    "title": "爵士歌手",
+    "original_title": "The Jazz Singer",
+    "year": 1927,
+    "type": "movie",
     "id": "demo-21",
-    "title": "星际穿越",
-    "original_title": "Interstellar",
-    "year": 2014,
-    "type": "movie",
     "genres": [
-      "Science fiction / 科幻"
+      "Classic / 经典"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-09.png"
   },
   {
+    "title": "铁翼雄风",
+    "original_title": "Wings",
+    "year": 1927,
+    "type": "movie",
     "id": "demo-22",
-    "title": "盗梦空间",
-    "original_title": "Inception",
-    "year": 2010,
-    "type": "movie",
     "genres": [
-      "Science fiction / 科幻"
+      "Classic / 经典"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-wings-verified.jpg"
   },
   {
-    "id": "demo-23",
-    "title": "绝命毒师",
-    "original_title": "Breaking Bad",
-    "year": 2008,
+    "title": "Bonanza",
+    "original_title": "Bonanza",
+    "year": 1959,
     "type": "tv",
+    "id": "demo-23",
     "genres": [
-      "Drama / 剧情"
+      "TV classics / 经典剧集"
     ],
-    "poster": "",
+    "poster": "Media Library/posters/complete-08.jpg",
+    "season_count": 14,
     "seasons": [
       {
         "season": 1,
@@ -288,19 +289,63 @@
         "season": 5,
         "label": "Season 5",
         "status": "released"
+      },
+      {
+        "season": 6,
+        "label": "Season 6",
+        "status": "released"
+      },
+      {
+        "season": 7,
+        "label": "Season 7",
+        "status": "released"
+      },
+      {
+        "season": 8,
+        "label": "Season 8",
+        "status": "released"
+      },
+      {
+        "season": 9,
+        "label": "Season 9",
+        "status": "released"
+      },
+      {
+        "season": 10,
+        "label": "Season 10",
+        "status": "released"
+      },
+      {
+        "season": 11,
+        "label": "Season 11",
+        "status": "released"
+      },
+      {
+        "season": 12,
+        "label": "Season 12",
+        "status": "released"
+      },
+      {
+        "season": 13,
+        "label": "Season 13",
+        "status": "released"
+      },
+      {
+        "season": 14,
+        "label": "Season 14",
+        "status": "released"
       }
-    ],
-    "season_count": 5
+    ]
   },
   {
-    "id": "demo-24",
-    "title": "神探夏洛克",
-    "original_title": "Sherlock",
-    "year": 2010,
+    "title": "The Beverly Hillbillies",
+    "original_title": "The Beverly Hillbillies",
+    "year": 1962,
     "type": "tv",
+    "id": "demo-24",
     "genres": [
-      "Drama / 剧情"
+      "TV classics / 经典剧集"
     ],
-    "poster": ""
+    "poster": "Media Library/posters/complete-11.jpg"
   }
 ]
