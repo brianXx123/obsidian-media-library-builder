@@ -2,7 +2,7 @@
 
 # Obsidian Media Library Builder
 
-**Create a local-first movie & TV library in Obsidian using an AI Skill, a CLI and a native poster-wall plugin.**
+**An original open-source project by brianXx123: build your own Obsidian movie & TV library with an AI Skill, a CLI, and a native poster-wall plugin.**
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -11,8 +11,7 @@
 </div>
 
 > [!IMPORTANT]
-> **Independent compatibility implementation, not a port of the author's original Movie Wall.**
-> The original Movie Wall sources and genuine Obsidian screenshots have not been provided. This repository includes an independently implemented in-Obsidian media wall and a standalone offline HTML gallery. The native plugin has automated contract tests; actual Obsidian desktop/mobile UI testing is still pending. **No AI mockups are shown as actual screenshots.**
+> **Original project / 原创项目.** The concept, product direction, and media-library workflow were created by **brianXx123**. The public repository contains the current working generator and native Obsidian plugin. The author's earlier Movie Wall source code and real Obsidian screenshots have not yet been added, so exact visual and interaction parity with that earlier build is not claimed. Native desktop/mobile verification remains pending. **Concept renders are not shown as actual screenshots.**
 
 ## Features / 功能
 
@@ -26,7 +25,7 @@
 | Offline browser preview | Searchable HTML poster wall, including vault-local posters where available |
 | Documentation | English + Simplified Chinese setup, data safety, roadmap and contribution notes |
 
-**What it does NOT yet include:** the original Movie Wall implementation/UI parity; automatic TMDB matching or artwork downloads; season and collection editing; GUI drag-and-drop importer; verified desktop/mobile Obsidian screenshots. Those limitations are tracked in the [roadmap](docs/ROADMAP.md).
+**Not yet included or verified:** the earlier Movie Wall build's complete UI/interaction design; automatic TMDB matching or artwork downloads; season and collection editing; GUI drag-and-drop importer; verified Obsidian desktop/mobile screenshots. See the [roadmap](docs/ROADMAP.md).
 
 ## Quick start / 快速开始
 
@@ -81,10 +80,10 @@ The repository contains GitHub Actions for Windows and Linux. **Automated contra
 
 ## Project status & transparency
 
-This is **v0.2.0-preview** (source on `main`), not an official release or an Obsidian Community Plugins listing. It is an independent community utility, unaffiliated with Obsidian or TMDB. No real film posters are bundled and no imagined GUI screenshots are presented as a finished product.
+This is **v0.2.0-preview** (source on `main`), not an official release or an Obsidian Community Plugins listing. It is an original open-source project maintained by brianXx123, unaffiliated with Obsidian or TMDB. No real film posters are bundled and no imagined GUI screenshots are presented as a finished product.
 
 [Roadmap](docs/ROADMAP.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Change log](CHANGELOG.md) · [Plugin installation](plugin/README.md)
 
 ## License
 
-MIT covers the original code and text committed here. Any eventual inclusion of the author's original Movie Wall source or third-party media assets will require a separate permission/license review.
+MIT covers the code and documentation committed here. Reintegrating the author's earlier local Movie Wall code requires checking its dependencies and any third-party assets; images and metadata remain subject to their respective licenses.
