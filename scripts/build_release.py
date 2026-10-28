@@ -23,7 +23,7 @@ def build():
     paths=[ROOT/'SKILL.md',ROOT/'LICENSE']
     for folder in ['scripts','plugin','examples','references']:
         paths.extend(p for p in (ROOT/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix in ['.py','.md','.json','.csv','.js','.css'])
-    paths=[p for p in paths if p.name!='build_release.py']
+    paths=[p for p in paths if p.name not in ('build_release.py', 'make_showcase.py')]  # development-only tools, not runtime Skill
     archive(skill,[('obsidian-media-library-builder/'+p.relative_to(ROOT).as_posix(),p) for p in paths])
     with tempfile.TemporaryDirectory() as temp:
         target=Path(temp)
