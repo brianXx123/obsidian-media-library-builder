@@ -1,7 +1,8 @@
 /*
- * Media Library Wall: an independent, native Obsidian community-plugin implementation.
+ * Media Library Wall: the native Obsidian module of the original
+ * Obsidian Media Library Builder project by brianXx123.
  * No network access, dynamic code, external images, or user-provided HTML.
- * This is NOT the author's unavailable original Movie Wall source.
+ * Earlier local Movie Wall source integration remains a separate development task.
  */
 const { Plugin, ItemView, Modal, Notice } = require('obsidian');
 const VIEW = 'media-library-wall';
