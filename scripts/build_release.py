@@ -6,9 +6,11 @@ ROOT=Path(__file__).resolve().parents[1]
 VERSION=json.loads((ROOT/'plugin/manifest.json').read_text(encoding='utf-8'))['version']
 
 def archive(path,files):
-    with zipfile.ZipFile(path,'w',zipfile.ZIP_DEFLATED) as z:
+    # ZIP_STORED avoids zlib-version differences; fixed Unix header fields avoid
+    # platform-specific ZipInfo defaults. Contents are small enough to ship raw.
+    with zipfile.ZipFile(path,'w',zipfile.ZIP_STORED) as z:
         for name,source in sorted(files):
-            info=zipfile.ZipInfo(name,(2026,1,1,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o644<<16
+            info=zipfile.ZipInfo(name,(2026,1,1,0,0,0));info.create_system=3;info.compress_type=zipfile.ZIP_STORED;info.external_attr=0o100644<<16
             z.writestr(info,source.read_bytes())
 
 def build():

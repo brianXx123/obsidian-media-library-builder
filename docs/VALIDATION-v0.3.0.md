@@ -40,6 +40,8 @@ The author supplied a 31.62-second **1080×2340** recording named `Screen_Record
 
 The intentional `simulated recycle-bin failure` message in the deletion harness is the tested error path, not an unhandled test failure. Mocked API checks are not represented as native application tests.
 
+The first remote CI run passed functional/package-install tests but failed exact package reproduction across Windows/Linux. ZIP platform defaults and compression were not fully normalized. The builder now sets fixed Unix ZIP metadata and uses ZIP_STORED to avoid compression-library variation; the exact-byte rebuild check remains mandatory on every matrix runner. The failed run is retained as evidence: [40653823405](https://github.com/brianXx123/obsidian-media-library-builder/actions/runs/40653823405). The corrected commit must pass complete CI before publication. / 首次远端 CI 发现跨平台 ZIP 字节差异，功能与安装测试通过；已固定 ZIP 平台元数据并使用无压缩存储，保留逐字节复核，失败记录不隐藏。
+
 Real desktop timing on this machine: 5,000 records filtered in **6.1 ms**; 1,000 actual card DOM nodes built in **119.5 ms**. This measures filtering and synchronous DOM construction, not total image decode, scrolling latency or a guarantee for other hardware. Full grid virtualization remains future work.
 
 ## Privacy, artwork and remaining limits
