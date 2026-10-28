@@ -4,6 +4,22 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · **0.3.1 preview**
 
+[![CI](https://github.com/brianXx123/obsidian-media-library-builder/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/brianXx123/obsidian-media-library-builder/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/brianXx123/obsidian-media-library-builder?include_prereleases&label=preview)](https://github.com/brianXx123/obsidian-media-library-builder/releases)
+[![License: MIT](https://img.shields.io/github/license/brianXx123/obsidian-media-library-builder)](LICENSE)
+
+## Get started / 开始使用
+
+| **AI Skill — recommended / AI 一键构建** | **Obsidian plugin / 插件安装** |
+|---|---|
+| [**Download Skill · 下载 AI Skill (0.3.1)**](https://github.com/brianXx123/obsidian-media-library-builder/releases/download/0.3.1/obsidian-media-library-builder-v0.3.1.skill) | [**Download plugin · 下载海报墙插件 (0.3.1)**](https://github.com/brianXx123/obsidian-media-library-builder/releases/download/0.3.1/media-library-wall-v0.3.1.zip) |
+| For AI-assisted vault creation, CSV/JSON import and plugin installation. | For installing the poster-wall view into an existing compatible Obsidian vault. |
+
+**Start here:** [Quick install](#install-the-ai-skill) · [FAQ / 常见问题](docs/FAQ.md) · [All verified release assets](https://github.com/brianXx123/obsidian-media-library-builder/releases/tag/0.3.1)
+
+> **Preview, not stable 1.0:** The AI Skill and Movie Wall are functional but advanced import/migration and some native platforms remain unverified. Actual screenshots below are from the documented test environments, not concept art.
+
+
 [Release downloads / 下载](https://github.com/brianXx123/obsidian-media-library-builder/releases) · [Schema & recovery / 字段与恢复](references/schema.md) · [Source comparison / 原版比对](docs/ORIGINAL-INTEGRATION.md) · [Validation / 验收](docs/VALIDATION-v0.3.1.md) · [Artwork / 海报来源](docs/ARTWORK.md)
 
 ## Real software
@@ -12,6 +28,9 @@ These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work dem
 
 ![Real Obsidian Desktop library](docs/screenshots/desktop-library.png)
 
+<details>
+<summary><strong>Desktop features / 桌面功能截图（点击展开）</strong></summary>
+
 | Movies / 电影 | Series / 电视剧 |
 |---|---|
 | ![Movies](docs/screenshots/desktop-movies.png) | ![Series](docs/screenshots/desktop-series.png) |
@@ -19,6 +38,8 @@ These are actual Windows Obsidian 1.14.5 screenshots of the isolated 24-work dem
 | ![Detail](docs/screenshots/desktop-detail.png) | ![Filter](docs/screenshots/desktop-filter.png) |
 
 [Markdown note / 笔记](docs/screenshots/desktop-note.png) · [Light theme / 浅色主题](docs/screenshots/desktop-light.png)
+
+</details>
 
 
 
@@ -76,7 +97,7 @@ node --test tests/*.cjs
 python scripts/build_release.py
 ```
 
-This is a GitHub pre-release, not stable 1.0 or an Obsidian Community Plugins listing. The planned numeric tag `0.3.1` matches the manifest for plugin compatibility. Directory submission remains a separate review process. [Release guide](docs/RELEASE-GUIDE.md) · [Release notes](docs/RELEASE-NOTES-v0.3.1.md).
+This is a GitHub pre-release, not stable 1.0 or an Obsidian Community Plugins listing. The planned numeric tag `0.3.1` matches the manifest for plugin compatibility. Directory submission remains a separate review process. [Release guide](docs/RELEASE-GUIDE.md) · [Release notes](docs/RELEASE-NOTES-v0.3.1.md) · [FAQ / 常见问题](docs/FAQ.md).
 
 ## License and contribution
 
