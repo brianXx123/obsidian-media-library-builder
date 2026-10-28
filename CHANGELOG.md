@@ -2,7 +2,7 @@
 
 ## 0.2.0-preview — 2026-10-27
 
-- Add an independently implemented, offline native Obsidian poster-wall plugin with search, filters, sorting, and a detail modal.
+- Add the project's native offline Obsidian poster-wall module with search, filters, sorting, and a detail modal.
 - Add watch-status overrides in `Media Library/user-state.json` without writing to imported notes.
 - Add safe `install-plugin` command (dry-run, no auto-enable, refuses conflicting files).
 - Add Node plugin contract tests and CI checks across Windows/Linux.
